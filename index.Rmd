@@ -6,16 +6,8 @@ title: "About Me"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## About me
-I'm currently finishing off my PhD at the University of Edinburgh under the supervision of Prof. Robert Logie, Dr Mario Parra and Prof. Nelson Cowan.
+I'm currently finishing off my PhD at the University of Edinburgh under the supervision of [Prof. Robert Logie](http://www.ppls.ed.ac.uk/psychology/people/robert-logie), [Dr Mario Parra](http://www.hw.ac.uk/schools/life-sciences/staff-directory/mario-parra-rodriguez.htm) and [Prof. Nelson Cowan](http://www.ppls.ed.ac.uk/people/nelson-cowan).
 
 ## Aim
 This is very much a work in progress. The ultimate aim is to use this site to share findings and resources (data and code).
-
-## Contact me
-email: srhodes@ed.ac.uk
-
-twitter: @stephenrho
-
-phone: 0131 650 3457
 

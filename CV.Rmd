@@ -6,4 +6,33 @@ title: "CV"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-CV to appear here
+## Education
+
++ PhD Psychology: *The University of Edinburgh* (2012 -- present)
++ MSc Human Cognitive Neuropsychology: *The University of Edinburgh* (2011 -- 2012)
++ BSc (hons) Psychology: *The University of Leeds* (2008 -- 2011)
+
+## Publications
+
+Rhodes, S., Parra, M. A., & Logie, R. H. (2015). Ageing and Feature Binding in Visual Working Memory: The Role of Presentation Time. *The Quarterly Journal of Experimental Psychology*, online ahead of print. [[link]](http://www.tandfonline.com/doi/abs/10.1080/17470218.2015.1038571)
+
+Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2016). Visual Feature Binding in Younger and Older Adults: Encoding and Suffix Interference Effects. *Memory*, in press.
+
+Rhodes, S., & Parra, M. A. (in press). Executive Functioning. Encyclopedia of Geropsychology, Springer.
+
+## Forthcoming
+
+Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., & Della Sala, S. (under review). Behavioural and Electrophysiological Correlates of Visual Working Memory Capacity During Change Detection Tasks. Submitted to Psychological Methods.
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (in prep). Healthy Ageing and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes.
+
+## Selected Posters and Presentations
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2015, Nov). Visual Work- ing Memory and Change Detection: Reassessing Whole Display Interference. Poster presented at the annual meeting of the Psychonomic Society, Chicago, Illinois.
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2014, Nov). The Effect of Age on Visual Working Memory for Features and Conjunctions. Poster presented at the annual meeting of the Psychonomic Society, Long Beach, California.
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2014, Sep). Does Healthy Ageing Affect the Ability to Bind Features in Visual Working Memory? Presented at the Seventh European Working Memory Symposium, Edinburgh.
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2014, Apr). Is Feature Binding in Visual Working Memory Age Invariant? Poster presented at the Cognitive Aging Conference 2014, Atlanta, Georgia.
+
