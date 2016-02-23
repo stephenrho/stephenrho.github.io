@@ -1,0 +1,5 @@
+html_document:
+  theme: cerulean
+  self_contained: false
+  lib_dir: libs
+

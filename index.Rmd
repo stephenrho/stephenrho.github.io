@@ -1,0 +1,21 @@
+---
+title: "About Me"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About me
+I'm currently finishing off my PhD at the University of Edinburgh under the supervision of Prof. Robert Logie, Dr Mario Parra and Prof. Nelson Cowan.
+
+## Aim
+This is very much a work in progress. The ultimate aim is to use this site to share findings and resources (data and code).
+
+## Contact me
+email: srhodes@ed.ac.uk
+
+twitter: @stephenrho
+
+phone: 0131 650 3457
+
