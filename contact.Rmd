@@ -1,9 +1,9 @@
 ---
-title: "Contact Me"
+title: "Contact"
 ---
 
 Stephen Rhodes  
-Psychology  
+Psychology (F15)  
 The University of Edinburgh  
 7 George Square  
 Edinburgh  
@@ -12,6 +12,8 @@ EH8 9JZ
 
 email: srhodes@exseed.ed.ac.uk
 
-twitter: @stephenrho
+twitter: @[stephenrho](https://twitter.com/stephenrho)
 
 phone: 0131 650 3457
+
+<div style="text-align: center"><img src="files/sr.jpg" width="400"></div>

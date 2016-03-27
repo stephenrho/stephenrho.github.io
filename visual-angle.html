@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Visual Angle in R</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -197,18 +197,42 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">About</h1>
+<h1 class="title">Visual Angle in R</h1>
 
 </div>
 
 
-<p>I’m currently finishing off my PhD at the University of Edinburgh under the supervision of <a href="http://www.ppls.ed.ac.uk/psychology/people/robert-logie" target="_blank">Professor Robert Logie</a>, <a href="http://www.hw.ac.uk/schools/life-sciences/staff-directory/mario-parra-rodriguez.htm" target="_blank">Dr Mario Parra</a> and <a href="http://www.ppls.ed.ac.uk/people/nelson-cowan" target="_blank">Professor Nelson Cowan</a>.</p>
-<p><br></br></p>
-<div style="text-align: center">
-<img src="files/cd.gif" width="200">
-</div>
-<p><br></br></p>
-<p>My research interests lie in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modelling of behaviour. My PhD thesis focuses on the apparent <em>absence</em> of a specific age-effect on the ability to associate object features (e.g. colour and shape) in visual working memory and its potential boundary conditions. Throughout there was a particular focus on the methodological issues associated with testing group differences in recognition memory.</p>
+<p>Here are some simple R functions I’ve found useful for calculating <a href="https://en.wikipedia.org/wiki/Visual_angle">visual angle</a> or inferring size from reports of visual angle in papers.</p>
+<p>The function <code>visAngle()</code> takes two arguments; the size of the stimulus and the viewing distance of the observer (both in the same units). It returns the visual angle of the stimulus.</p>
+<pre class="r"><code>visAngle &lt;- function(size, distance){
+  # this function calculates visual angle
+  # size and distance must be in the same units
+  Rad = 2*atan(size/(2*distance))
+  Ang = Rad*(180/pi)
+  return(Ang)
+}
+
+visAngle(size = 1, distance = 57) # why people use 57 cm as viewing distance</code></pre>
+<pre><code>## [1] 1.005163</code></pre>
+<p>Occasionally, to replicate a paradigm, you’ll want to calculate the size of a stimulus from a reported visual angle and viewing distance. The function <code>desiredSize()</code> takes a visual angle and distance and returns the stimulus size in the same units as the distance.</p>
+<pre class="r"><code>desiredSize &lt;- function(visAngle, distance){
+  # this function gives desired size of stimulus
+  # given visual angle and distance
+  # size returned is in same units and distance
+  Rad = visAngle/(180/pi) # or pi*(visAngle/180)
+  size = 2*distance*tan(Rad/2)
+  return(size)
+}
+
+desiredSize(visAngle = 2.5, distance = 40)</code></pre>
+<pre><code>## [1] 1.745606</code></pre>
+<p>Proof they actually work!</p>
+<pre class="r"><code>dist = 50
+size = 5
+ang = visAngle(size = size, distance = dist)
+
+desiredSize(visAngle = ang, distance = dist)</code></pre>
+<pre><code>## [1] 5</code></pre>
 
 
 

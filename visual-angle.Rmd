@@ -1,0 +1,46 @@
+---
+title: "Visual Angle in R"
+---
+
+Here are some simple R functions I've found useful for calculating [visual angle](https://en.wikipedia.org/wiki/Visual_angle) or inferring size from reports of visual angle in papers.
+
+The function ``visAngle()`` takes two arguments; the size of the stimulus and the viewing distance of the observer (both in the same units). It returns the visual angle of the stimulus.
+
+```{r}
+visAngle <- function(size, distance){
+  # this function calculates visual angle
+  # size and distance must be in the same units
+  Rad = 2*atan(size/(2*distance))
+  Ang = Rad*(180/pi)
+  return(Ang)
+}
+
+visAngle(size = 1, distance = 57) # why people use 57 cm as viewing distance
+
+```
+
+Occasionally, to replicate a paradigm, you'll want to calculate the size of a stimulus from a reported visual angle and viewing distance. The function ``desiredSize()`` takes a visual angle and distance and returns the stimulus size in the same units as the distance.
+
+```{r}
+desiredSize <- function(visAngle, distance){
+  # this function gives desired size of stimulus
+  # given visual angle and distance
+  # size returned is in same units and distance
+  Rad = visAngle/(180/pi) # or pi*(visAngle/180)
+  size = 2*distance*tan(Rad/2)
+  return(size)
+}
+
+desiredSize(visAngle = 2.5, distance = 40)
+```
+
+Proof they actually work!
+
+```{r}
+dist = 50
+size = 5
+ang = visAngle(size = size, distance = dist)
+
+desiredSize(visAngle = ang, distance = dist)
+```
+

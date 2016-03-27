@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Logit Model for rjags</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="libs/highlight/default.css"
+      type="text/css" />
+<script src="libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<link rel="stylesheet" href="font.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stephen Rhodes</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="CV.html">CV</a></li>
+        <li class="dropdown">
+          <a href="code.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Code <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+          <!--<li class="dropdown-header">Code </li>-->
+          <li><a href="rjags-model.html">Logit model in rjags</a></li>
+          <li><a href="visual-angle.html">Visual angle in R</a></li>
+          <!--<li class="divider"></li>-->
+          <!--<li class="dropdown-header">Data</li>-->
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/stephenrho">GitHub</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+<h1 class="title">Logit Model for rjags</h1>
+
+</div>
+
+
+<p>Much of the data collected in psychology is binary (e.g. correct/ incorrect) and is often aggregated (e.g. proportion correct) and analysed using standard techniques (<em>t</em> tests, ANOVA, linear regression). This can lead to some misleading conclusions, especially regarding interaction effects, and the use of generalised linear models has been advocated (e.g., <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2613284/" target="_blank">Jaeger, 2008</a>). Generalised linear mixed effects models (GLMMs) are increasing in popularity thanks to packages such as <a href="https://cran.r-project.org/web/packages/lme4/lme4.pdf" target="_blank">lme4</a>.</p>
+<p>Here I’ll describe a Bayesian implementation of a generalised linear model for binary data using the logit link function. It is written in JAGS (<a href="http://www.ci.tuwien.ac.at/Conferences/DSC-2003/Drafts/Plummer.pdf" target="_blank">Plummer, 2003</a>) and is estimated using the R package, <a href="https://cran.r-project.org/web/packages/rjags/rjags.pdf" target="_blank">rjags</a>. The model described here is quite basic and there are packages that implement Bayesian estimation of GLMMs (e.g., <a href="https://cran.r-project.org/web/packages/MCMCglmm/index.html" target="_blank">MCMCglmm</a>, <a href="https://cran.r-project.org/web/packages/BANOVA/BANOVA.pdf" target="_blank">BANOVA</a>) but hopefully this is useful for beginners. The model can be found <a href="https://github.com/stephenrho/logit-rjags" target="_blank">here</a>.</p>
+<p>The script <code>model.R</code> contains the JAGS model code and parameters we want to monitor. This model string is called by the script <code>run.R</code> which actually performs the model estimation. The script <code>makeData.R</code> creates a mock data-set for use with <code>run.R</code>, alternatively you can substitute your own data frame.</p>
+<div id="the-model" class="section level2">
+<h2>The Model</h2>
+<p>The model code is given at the bottom of this page and in the script <code>model.R</code>. Here’s a quick overview:</p>
+<p>Each trial (<span class="math">\(i\)</span>) is distributed as a Bernoulli with underling probability of success <code>P[i]</code>. Rather than modelling <code>P</code>, which falls within [0,1], directly we model the log odds of success which spans [<span class="math">\(-\infty\)</span>, <span class="math">\(\infty\)</span>].</p>
+<p><span class="math">\[
+\text{logit}(p) = \log\left(\frac{p}{1-p}\right)
+\]</span></p>
+<p>The probability of success on trial <span class="math">\(i\)</span> is given on line 7 of the script: <code>logit(P[i]) &lt;- B0 + inprod(B, X[i,]) + s[id[i]]</code>. Thus the log odds of a correct response are determined by three components:</p>
+<ol style="list-style-type: decimal">
+<li>A grand mean (<code>B0</code>)</li>
+<li>Deflections from the mean (<code>B</code>) reflecting main effects and interactions in the design matrix (<code>X</code>) for that trial</li>
+<li>A random participant effect (<code>s</code>), assumed to be normally distributed with a mean of 0 and standard deviation estimated from the data (<code>sSD</code>)</li>
+</ol>
+<p>The interpretation of <code>B0</code> as the grand mean and <code>B</code> as deflections from that mean requires the use of sum-to-zero (or effects) coding in the design matrix <code>X</code>. This is outlined in more detail in a worked example below and in <code>run.R</code>.</p>
+<div id="priors" class="section level3">
+<h3>Priors</h3>
+<p>As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a <span class="math">\(\text{Cauchy}(0, 2.5)\)</span> prior distribution on the grand mean parameter (<code>B0</code>) and deflection parameters (<code>B</code>). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects <span class="math">\(\pm 2.5\)</span> but given the Cauchy’s heavy tails does not rule out larger effects. One may modify the mean of the prior on <code>B0</code> to reflect prior expectation of above/ below chance performance.</p>
+<p>For the standard deviation of the participant effect (<code>sSD</code>) we use a <span class="math">\(\text{Gamma}(a, b)\)</span> distribution with <span class="math">\(a\)</span> and <span class="math">\(b\)</span> set to produce a distribution with a mode of 0.1 and standard deviation of 10 which is extremely vague on the log odds scale. See <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/04/improved-programs-for-hierarchical.html" target="_blank">here</a> and <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/01/parameterizing-gamma-distribution-by.html" target="_blank">here</a> for more explanation.</p>
+</div>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The information required to estimate the model parameters is as follows:</p>
+<ul>
+<li><code>n</code> – the number of observations in the data frame</li>
+<li><code>y</code> – the response on each trial (1 or 0)</li>
+<li><code>X</code> – a design matrix (minus the intercept)</li>
+<li><code>nEff</code> – number of `effects’ (columns in <code>X</code>)</li>
+<li><code>id</code> – participant id for each trial</li>
+<li><code>S</code> – number of participants overall</li>
+</ul>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>The script <code>run.R</code> provides the code needed to estimate the model with rjags. The data in this example was created using <code>makeData.R</code> and comes from a hypothetical 2 by 2 repeated measures design. These factors are labelled <code>J</code> (with levels <code>J1</code> and <code>J2</code>) and <code>K</code> (<code>K1</code> and <code>K2</code>).</p>
+<p>In the simulated data set there are two main effects and no interaction (on log odds scale) with the addition of a random participant effect with a standard deviation of 1.</p>
+<p>The data is read in and the design matrix <code>X</code> is created. As noted above the interpretation of the model parameters depends on the use of sum-to-zero effects coding: this is achieved by setting the options for contrasts to <code>'contr.sum'</code>. As is typical with contrast coding we limit ourselves to <span class="math">\(L - 1\)</span> contrasts per experimental factor (where <span class="math">\(L\)</span> is the number of levels in a given factor). Using <code>contr.sum</code> ensures that the reference group is coded -1 for all contrasts (as opposed to 0 in dummy coding). This coding strategy has a number of advantages, not least straightforward interpretation of the resulting parameter estimates and reduced auto-correlation in MCMC chains.</p>
+<p>The design matrix is given by the line: <code>X &lt;- model.matrix(~ J*K, data = dataf)[,2:4]</code> which gives both main effects and the interaction whilst omitting the intercept (which is dealt with by <code>B0</code>). The remainder of <code>run.R</code> uses rjags to perform the MCMC sampling. The resulting parameter estimates stored in <code>B</code> can be used to assess the magnitude of main effects and interactions.</p>
+</div>
+<div id="model-code" class="section level2">
+<h2>Model Code</h2>
+<pre><code>  model {
+    for (i in 1:n){
+      y[i] ~ dbern(y.hat[i])
+      y.hat[i] &lt;- max(0, min(1,P[i]))
+      logit(P[i]) &lt;- B0 + inprod(B, X[i,]) + s[id[i]]
+    }
+    # grand mean
+    B0 ~ dt(0, 1/2.5^2, 1)
+    # deflections from grand mean (fixed effects)
+    for (b in 1:nEff){
+      B[b] ~ dt(0, 1/2.5^2, 1) # cauchy(0, 2.5) prior (Gelman et al., 2008)
+    }
+    # participant random effect
+    for (ppt in 1:S){
+      s[ppt] ~ dnorm(0, sTau)
+    }
+    sTau &lt;- 1/pow(sSD, 2)
+    sSD ~ dgamma(1.01005, 0.1005012) # mode = .1, SD = 10 (v. vague)
+  }</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+---
+title: "Logit Model for rjags"
+---
+
+Much of the data collected in psychology is binary (e.g. correct/ incorrect) and is often aggregated (e.g. proportion correct) and analysed using standard techniques (*t* tests, ANOVA, linear regression). This can lead to some misleading conclusions, especially regarding interaction effects, and the use of generalised linear models has been advocated (e.g., <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2613284/" target="_blank">Jaeger, 2008</a>). Generalised linear mixed effects models (GLMMs) are increasing in popularity thanks to packages such as <a href="https://cran.r-project.org/web/packages/lme4/lme4.pdf" target="_blank">lme4</a>.
+
+Here I'll describe a Bayesian implementation of a generalised linear model for binary data using the logit link function. It is written in JAGS (<a href="http://www.ci.tuwien.ac.at/Conferences/DSC-2003/Drafts/Plummer.pdf" target="_blank">Plummer, 2003</a>) and is estimated using the R package, <a href="https://cran.r-project.org/web/packages/rjags/rjags.pdf" target="_blank">rjags</a>. The model described here is quite basic and there are packages that implement Bayesian estimation of GLMMs (e.g., <a href="https://cran.r-project.org/web/packages/MCMCglmm/index.html" target="_blank">MCMCglmm</a>, <a href="https://cran.r-project.org/web/packages/BANOVA/BANOVA.pdf" target="_blank">BANOVA</a>) but hopefully this is useful for beginners. The model can be found <a href="https://github.com/stephenrho/logit-rjags" target="_blank">here</a>.
+
+The script ``model.R`` contains the JAGS model code and parameters we want to monitor. This model string is called by the script ``run.R`` which actually performs the model estimation. The script ``makeData.R`` creates a mock data-set for use with ``run.R``, alternatively you can substitute your own data frame.
+
+## The Model
+
+The model code is given at the bottom of this page and in the script ``model.R``. Here's a quick overview:
+
+Each trial ($i$) is distributed as a Bernoulli with underling probability of success ``P[i]``. Rather than modelling ``P``, which falls within [0,1], directly we model the log odds of success which spans [$-\infty$, $\infty$]. 
+
+$$
+\text{logit}(p) = \log\left(\frac{p}{1-p}\right)
+$$
+
+The probability of success on trial $i$ is given on line 7 of the script: ``logit(P[i]) <- B0 + inprod(B, X[i,]) + s[id[i]]``. Thus the log odds of a correct response are determined by three components:
+
+  1. A grand mean (``B0``)
+  2. Deflections from the mean (``B``) reflecting main effects and interactions in the design matrix (``X``) for that trial
+  3. A random participant effect (``s``), assumed to be normally distributed with a mean of 0 and standard deviation estimated from the data (``sSD``)
+
+The interpretation of ``B0`` as the grand mean and ``B`` as deflections from that mean requires the use of sum-to-zero (or effects) coding in the design matrix ``X``. This is outlined in more detail in a worked example below and in ``run.R``.
+
+### Priors
+
+As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a $\text{Cauchy}(0, 2.5)$ prior distribution on the grand mean parameter (``B0``) and deflection parameters (``B``). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects $\pm 2.5$ but given the Cauchy's heavy tails does not rule out larger effects. One may modify the mean of the prior on ``B0`` to reflect prior expectation of above/ below chance performance. 
+
+For the standard deviation of the participant effect (``sSD``) we use a $\text{Gamma}(a, b)$ distribution with $a$ and $b$ set to produce a distribution with a mode of 0.1 and standard deviation of 10 which is extremely vague on the log odds scale. See <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/04/improved-programs-for-hierarchical.html" target="_blank">here</a> and <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/01/parameterizing-gamma-distribution-by.html" target="_blank">here</a> for more explanation.
+
+## Data
+
+The information required to estimate the model parameters is as follows:
+
+* ``n`` -- the number of observations in the data frame
+* ``y`` -- the response on each trial (1 or 0)
+* ``X`` -- a design matrix (minus the intercept)
+* ``nEff`` -- number of `effects' (columns in ``X``)
+* ``id`` -- participant id for each trial
+* ``S`` -- number of participants overall
+
+## Example
+
+The script ``run.R`` provides the code needed to estimate the model with rjags. The data in this example was created using ``makeData.R`` and comes from a hypothetical 2 by 2 repeated measures design. These factors are labelled ``J`` (with levels ``J1`` and ``J2``) and ``K`` (``K1`` and ``K2``). 
+
+In the simulated data set there are two main effects and no interaction (on log odds scale) with the addition of a random participant effect with a standard deviation of 1. 
+
+The data is read in and the design matrix ``X`` is created. As noted above the interpretation of the model parameters depends on the use of sum-to-zero effects coding: this is achieved by setting the options for contrasts to ``'contr.sum'``. As is typical with contrast coding we limit ourselves to $L - 1$ contrasts per experimental factor (where $L$ is the number of levels in a given factor). Using ``contr.sum`` ensures that the reference group is coded -1 for all contrasts (as opposed to 0 in dummy coding). This coding strategy has a number of advantages, not least straightforward interpretation of the resulting parameter estimates and reduced auto-correlation in MCMC chains.
+
+The design matrix is given by the line: ``X <- model.matrix(~ J*K, data = dataf)[,2:4]`` which gives both main effects and the interaction whilst omitting the intercept (which is dealt with by ``B0``). The remainder of ``run.R`` uses rjags to perform the MCMC sampling. The resulting parameter estimates stored in ``B`` can be used to assess the magnitude of main effects and interactions. 
+
+## Model Code
+
+```
+  model {
+    for (i in 1:n){
+      y[i] ~ dbern(y.hat[i])
+      y.hat[i] <- max(0, min(1,P[i]))
+      logit(P[i]) <- B0 + inprod(B, X[i,]) + s[id[i]]
+    }
+    # grand mean
+    B0 ~ dt(0, 1/2.5^2, 1)
+    # deflections from grand mean (fixed effects)
+    for (b in 1:nEff){
+      B[b] ~ dt(0, 1/2.5^2, 1) # cauchy(0, 2.5) prior (Gelman et al., 2008)
+    }
+    # participant random effect
+    for (ppt in 1:S){
+      s[ppt] ~ dnorm(0, sTau)
+    }
+    sTau <- 1/pow(sSD, 2)
+    sSD ~ dgamma(1.01005, 0.1005012) # mode = .1, SD = 10 (v. vague)
+  }
+```

@@ -40,6 +40,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
+<link rel="stylesheet" href="font.css" type="text/css" />
 
 </head>
 
@@ -174,8 +175,17 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="CV.html">CV</a></li>
-        <li><a href="code.html">Code</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        <li class="dropdown">
+          <a href="code.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Code <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+          <!--<li class="dropdown-header">Code </li>-->
+          <li><a href="rjags-model.html">Logit model in rjags</a></li>
+          <li><a href="visual-angle.html">Visual angle in R</a></li>
+          <!--<li class="divider"></li>-->
+          <!--<li class="dropdown-header">Data</li>-->
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="https://github.com/stephenrho">GitHub</a></li>
@@ -192,7 +202,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>code to appear here</p>
+<p>Please select one of the options from the dropdown.</p>
 
 
 

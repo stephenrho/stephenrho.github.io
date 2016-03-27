@@ -1,5 +1,7 @@
 html_document:
   theme: cerulean
+  css: font.css
   self_contained: false
   lib_dir: libs
+  highlight: default
 
