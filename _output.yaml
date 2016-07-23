@@ -1,5 +1,5 @@
 html_document:
-  theme: cerulean
+  theme: sandstone
   css: font.css
   self_contained: false
   lib_dir: libs

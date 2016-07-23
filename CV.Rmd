@@ -6,9 +6,10 @@ title: "CV"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Education
+## Education and Training
 
-+ PhD Psychology: *The University of Edinburgh* (2012 -- present)
++ Post-Doctoral Research Fellow: *The University of Missouri* (2016 -- present)
++ PhD Psychology: *The University of Edinburgh* (2012 -- 2016)
 + MSc Human Cognitive Neuropsychology: *The University of Edinburgh* (2011 -- 2012)
 + BSc (hons) Psychology: *The University of Leeds* (2008 -- 2011)
 
@@ -17,9 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 Rhodes, S., Parra, M. A., & Logie, R. H. (2016). Ageing and Feature Binding in Visual Working Memory: The Role of Presentation Time. *The Quarterly Journal of Experimental Psychology, 69*(4), 654-668. 
 <a href="http://www.tandfonline.com/doi/abs/10.1080/17470218.2015.1038571" target="_blank">[link]</a> <a href="files/RhodesParraLogie2016.pdf" target="_blank" style="color:teal">(pdf)</a>
 
-Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2016). Visual Feature Binding in Younger and Older Adults: Encoding and Suffix Interference Effects. *Memory*, in press. <a href="http://www.tandfonline.com/doi/full/10.1080/09658211.2016.1156705" target="_blank">[link]</a> <a href="files/BrownEtAlMemory.pdf" target="_blank" style="color:teal">(pdf)</a>
+Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2016). Visual Feature Binding in Younger and Older Adults: Encoding and Suffix Interference Effects. *Memory*, in press. <a href="http://www.tandfonline.com/doi/full/10.1080/09658211.2016.1156705" target="_blank">[link]</a> <a href="files/BrownEtAlMemory.pdf" target="_blank" style="color:teal">(pdf)</a> 
 
-Rhodes, S., & Parra, M. A. (in press). *Executive Functioning*. Encyclopedia of Geropsychology, Springer.
+Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Geropsychology, Springer. <a href="http://link.springer.com/referencework/10.1007%2F978-981-287-080-3" target="_blank">[link]</a> <a href="files/RhodesAndParra_ExecutiveFunctioning.pdf" target="_blank" style="color:teal">(pdf)</a>
 
 ## In Progress
 

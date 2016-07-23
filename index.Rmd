@@ -6,13 +6,9 @@ title: "About"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I'm currently finishing off my PhD at the University of Edinburgh under the supervision of <a href="http://www.ppls.ed.ac.uk/psychology/people/robert-logie" target="_blank">Professor Robert Logie</a>, <a href="http://www.hw.ac.uk/schools/life-sciences/staff-directory/mario-parra-rodriguez.htm" target="_blank">Dr Mario Parra</a> and <a href="http://www.ppls.ed.ac.uk/people/nelson-cowan" target="_blank">Professor Nelson Cowan</a>.
+I'm currently working at the University of Missouri as a post-doctoral research fellow on the ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>). I recently completed my PhD at the University of Edinburgh under the supervision of <a href="http://www.ppls.ed.ac.uk/psychology/people/robert-logie" target="_blank">Professor Robert Logie</a>, <a href="http://www.hw.ac.uk/schools/life-sciences/staff-directory/mario-parra-rodriguez.htm" target="_blank">Dr Mario Parra</a> and <a href="http://www.ppls.ed.ac.uk/people/nelson-cowan" target="_blank">Professor Nelson Cowan</a>.
 
+<div style="text-align: center"><img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400"></div>
 <br></br>
-
-<div style="text-align: center"><img src="files/cd.gif" width="200"></div>
-
-<br></br>
-
-My research interests lie in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modelling of behaviour. My PhD thesis focuses on the apparent *absence* of a specific age-effect on the ability to associate object features (e.g. colour and shape) in visual working memory and its potential boundary conditions. Throughout there was a particular focus on the methodological issues associated with testing group differences in recognition memory.
+My PhD project focused on the effect of healthy ageing on the ability to bind and temporarily retain conjunctions of features in visual working memory as well as measurement issues surrounding this question (and related areas). Currently my research interests lie in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modelling of behaviour.
 
