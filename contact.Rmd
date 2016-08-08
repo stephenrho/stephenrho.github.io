@@ -3,20 +3,13 @@ title: "Contact"
 ---
 
 Stephen Rhodes  
-<strike>
-Psychology (F15)  
-The University of Edinburgh  
-7 George Square  
-Edinburgh  
-EH8 9JZ
-</strike>
+Department of Psychological Sciences  
+9J McAlester Hall  
+University of Missouri  
+Columbia, MO 65211-2500
 
-In process of moving to Mizzou...
-
-email: srhodes@exseed.ed.ac.uk
+email: rhodessp@missouri.edu
 
 twitter: @[stephenrho](https://twitter.com/stephenrho)
-
-phone: <strike> 0131 650 3457 </strike>
 
 <div style="text-align: center"><img src="files/sr.jpg" width="400"></div>
