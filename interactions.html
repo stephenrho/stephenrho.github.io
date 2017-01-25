@@ -11,7 +11,7 @@
 
 
 
-<title>Visual Angle in R</title>
+<title>Simulating Interaction Effects in Detection/ Recognition Paradigms</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -198,42 +198,13 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">Visual Angle in R</h1>
+<h1 class="title">Simulating Interaction Effects in Detection/ Recognition Paradigms</h1>
 
 </div>
 
 
-<p>Here are some simple R functions I’ve found useful for calculating <a href="https://en.wikipedia.org/wiki/Visual_angle">visual angle</a> or inferring size from reports of visual angle in papers.</p>
-<p>The function <code>visAngle()</code> takes two arguments; the size of the stimulus and the viewing distance of the observer (both in the same units). It returns the visual angle of the stimulus.</p>
-<pre class="r"><code>visAngle &lt;- function(size, distance){
-  # this function calculates visual angle
-  # size and distance must be in the same units
-  Rad = 2*atan(size/(2*distance))
-  Ang = Rad*(180/pi)
-  return(Ang)
-}
-
-visAngle(size = 1, distance = 57) # why people use 57 cm as viewing distance</code></pre>
-<pre><code>## [1] 1.005163</code></pre>
-<p>Occasionally, to replicate a paradigm, you’ll want to calculate the size of a stimulus from a reported visual angle and viewing distance. The function <code>desiredSize()</code> takes a visual angle and distance and returns the stimulus size in the same units as the distance.</p>
-<pre class="r"><code>desiredSize &lt;- function(visAngle, distance){
-  # this function gives desired size of stimulus
-  # given visual angle and distance
-  # size returned is in same units and distance
-  Rad = visAngle/(180/pi) # or pi*(visAngle/180)
-  size = 2*distance*tan(Rad/2)
-  return(size)
-}
-
-desiredSize(visAngle = 2.5, distance = 40)</code></pre>
-<pre><code>## [1] 1.745606</code></pre>
-<p>Proof they actually work!</p>
-<pre class="r"><code>dist = 50
-size = 5
-ang = visAngle(size = size, distance = dist)
-
-desiredSize(visAngle = ang, distance = dist)</code></pre>
-<pre><code>## [1] 5</code></pre>
+<p><a href="https://github.com/stephenrho/MeasuresAndErrors">Here</a> you can find the code I wrote to run simulations of data conforming to signal detection theory (SDT) or two-high threshold theory (THT) accounts of detection and recognition. The simulated data follow a 2 by 2 mixed design (e.g. group by condition) and were used to assess type I error rate and power for three commonly used measures of sensitivity; <span class="math inline">\(d&#39;\)</span>, <span class="math inline">\(A&#39;\)</span>, and <span class="math inline">\(P_{r}\)</span> (or hits minus false-alarms).</p>
+<p>The manuscript accompanying this, “Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power”, is currently under review.</p>
 
 
 

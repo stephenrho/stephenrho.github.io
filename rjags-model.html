@@ -181,6 +181,7 @@ $(document).ready(function () {
           <!--<li class="dropdown-header">Code </li>-->
           <li><a href="rjags-model.html">Logit model in rjags</a></li>
           <li><a href="visual-angle.html">Visual angle in R</a></li>
+          <li><a href="interactions.html">Interactions</a></li>
           <!--<li class="divider"></li>-->
           <!--<li class="dropdown-header">Data</li>-->
           </ul>
@@ -208,11 +209,11 @@ $(document).ready(function () {
 <div id="the-model" class="section level2">
 <h2>The Model</h2>
 <p>The model code is given at the bottom of this page and in the script <code>model.R</code>. Here’s a quick overview:</p>
-<p>Each trial (<span class="math">\(i\)</span>) is distributed as a Bernoulli with underling probability of success <code>P[i]</code>. Rather than modelling <code>P</code>, which falls within [0,1], directly we model the log odds of success which spans [<span class="math">\(-\infty\)</span>, <span class="math">\(\infty\)</span>].</p>
-<p><span class="math">\[
+<p>Each trial (<span class="math inline">\(i\)</span>) is distributed as a Bernoulli with underling probability of success <code>P[i]</code>. Rather than modelling <code>P</code>, which falls within [0,1], directly we model the log odds of success which spans [<span class="math inline">\(-\infty\)</span>, <span class="math inline">\(\infty\)</span>].</p>
+<p><span class="math display">\[
 \text{logit}(p) = \log\left(\frac{p}{1-p}\right)
 \]</span></p>
-<p>The probability of success on trial <span class="math">\(i\)</span> is given on line 7 of the script: <code>logit(P[i]) &lt;- B0 + inprod(B, X[i,]) + s[id[i]]</code>. Thus the log odds of a correct response are determined by three components:</p>
+<p>The probability of success on trial <span class="math inline">\(i\)</span> is given on line 7 of the script: <code>logit(P[i]) &lt;- B0 + inprod(B, X[i,]) + s[id[i]]</code>. Thus the log odds of a correct response are determined by three components:</p>
 <ol style="list-style-type: decimal">
 <li>A grand mean (<code>B0</code>)</li>
 <li>Deflections from the mean (<code>B</code>) reflecting main effects and interactions in the design matrix (<code>X</code>) for that trial</li>
@@ -221,8 +222,8 @@ $(document).ready(function () {
 <p>The interpretation of <code>B0</code> as the grand mean and <code>B</code> as deflections from that mean requires the use of sum-to-zero (or effects) coding in the design matrix <code>X</code>. This is outlined in more detail in a worked example below and in <code>run.R</code>.</p>
 <div id="priors" class="section level3">
 <h3>Priors</h3>
-<p>As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a <span class="math">\(\text{Cauchy}(0, 2.5)\)</span> prior distribution on the grand mean parameter (<code>B0</code>) and deflection parameters (<code>B</code>). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects <span class="math">\(\pm 2.5\)</span> but given the Cauchy’s heavy tails does not rule out larger effects. One may modify the mean of the prior on <code>B0</code> to reflect prior expectation of above/ below chance performance.</p>
-<p>For the standard deviation of the participant effect (<code>sSD</code>) we use a <span class="math">\(\text{Gamma}(a, b)\)</span> distribution with <span class="math">\(a\)</span> and <span class="math">\(b\)</span> set to produce a distribution with a mode of 0.1 and standard deviation of 10 which is extremely vague on the log odds scale. See <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/04/improved-programs-for-hierarchical.html" target="_blank">here</a> and <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/01/parameterizing-gamma-distribution-by.html" target="_blank">here</a> for more explanation.</p>
+<p>As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a <span class="math inline">\(\text{Cauchy}(0, 2.5)\)</span> prior distribution on the grand mean parameter (<code>B0</code>) and deflection parameters (<code>B</code>). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects <span class="math inline">\(\pm 2.5\)</span> but given the Cauchy’s heavy tails does not rule out larger effects. One may modify the mean of the prior on <code>B0</code> to reflect prior expectation of above/ below chance performance.</p>
+<p>For the standard deviation of the participant effect (<code>sSD</code>) we use a <span class="math inline">\(\text{Gamma}(a, b)\)</span> distribution with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> set to produce a distribution with a mode of 0.1 and standard deviation of 10 which is extremely vague on the log odds scale. See <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/04/improved-programs-for-hierarchical.html" target="_blank">here</a> and <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/01/parameterizing-gamma-distribution-by.html" target="_blank">here</a> for more explanation.</p>
 </div>
 </div>
 <div id="data" class="section level2">
@@ -241,7 +242,7 @@ $(document).ready(function () {
 <h2>Example</h2>
 <p>The script <code>run.R</code> provides the code needed to estimate the model with rjags. The data in this example was created using <code>makeData.R</code> and comes from a hypothetical 2 by 2 repeated measures design. These factors are labelled <code>J</code> (with levels <code>J1</code> and <code>J2</code>) and <code>K</code> (<code>K1</code> and <code>K2</code>).</p>
 <p>In the simulated data set there are two main effects and no interaction (on log odds scale) with the addition of a random participant effect with a standard deviation of 1.</p>
-<p>The data is read in and the design matrix <code>X</code> is created. As noted above the interpretation of the model parameters depends on the use of sum-to-zero effects coding: this is achieved by setting the options for contrasts to <code>'contr.sum'</code>. As is typical with contrast coding we limit ourselves to <span class="math">\(L - 1\)</span> contrasts per experimental factor (where <span class="math">\(L\)</span> is the number of levels in a given factor). Using <code>contr.sum</code> ensures that the reference group is coded -1 for all contrasts (as opposed to 0 in dummy coding). This coding strategy has a number of advantages, not least straightforward interpretation of the resulting parameter estimates and reduced auto-correlation in MCMC chains.</p>
+<p>The data is read in and the design matrix <code>X</code> is created. As noted above the interpretation of the model parameters depends on the use of sum-to-zero effects coding: this is achieved by setting the options for contrasts to <code>'contr.sum'</code>. As is typical with contrast coding we limit ourselves to <span class="math inline">\(L - 1\)</span> contrasts per experimental factor (where <span class="math inline">\(L\)</span> is the number of levels in a given factor). Using <code>contr.sum</code> ensures that the reference group is coded -1 for all contrasts (as opposed to 0 in dummy coding). This coding strategy has a number of advantages, not least straightforward interpretation of the resulting parameter estimates and reduced auto-correlation in MCMC chains.</p>
 <p>The design matrix is given by the line: <code>X &lt;- model.matrix(~ J*K, data = dataf)[,2:4]</code> which gives both main effects and the interaction whilst omitting the intercept (which is dealt with by <code>B0</code>). The remainder of <code>run.R</code> uses rjags to perform the MCMC sampling. The resulting parameter estimates stored in <code>B</code> can be used to assess the magnitude of main effects and interactions.</p>
 </div>
 <div id="model-code" class="section level2">

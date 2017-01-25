@@ -6,6 +6,10 @@ title: "CV"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+A more complete CV can be found [here](https://www.dropbox.com/s/dtohay90uud161b/CV%20S.Rhodes.pdf).
+
+<br></br>
+
 ## Education and Training
 
 + Post-Doctoral Research Fellow: *The University of Missouri* (2016 -- present)
@@ -13,7 +17,13 @@ knitr::opts_chunk$set(echo = TRUE)
 + MSc Human Cognitive Neuropsychology: *The University of Edinburgh* (2011 -- 2012)
 + BSc (hons) Psychology: *The University of Leeds* (2008 -- 2011)
 
+<br></br>
+
 ## Publications
+
+Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (*in press*). Healthy Aging and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes. *Psychology & Aging*. <a href="http://www.research.ed.ac.uk/portal/files/30095456/Rhodes_ParraCowanLogieWMandAge.pdf" target="_blank">[link]</a>
+
+Smith, K., Ricaud, B., Shahid, N., Rhodes, S., Starr, J. M., Ibanez, A., Parra, M. A., Escudero, J., & Vandergheynst, P. (*in press*). Locating Temporal Functional Dynamics of Visual Short-Term Memory Binding using Graph Modular Dirichlet Energy. *Scientific Reports*. <a href="https://arxiv.org/pdf/1606.02587.pdf" target="_blank">[link]</a>
 
 Rhodes, S., Parra, M. A., & Logie, R. H. (2016). Ageing and Feature Binding in Visual Working Memory: The Role of Presentation Time. *The Quarterly Journal of Experimental Psychology, 69*(4), 654-668. 
 <a href="http://www.tandfonline.com/doi/abs/10.1080/17470218.2015.1038571" target="_blank">[link]</a> <a href="files/RhodesParraLogie2016.pdf" target="_blank" style="color:teal">(pdf)</a>
@@ -22,13 +32,21 @@ Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2016). Vis
 
 Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Geropsychology, Springer. <a href="http://link.springer.com/referencework/10.1007%2F978-981-287-080-3" target="_blank">[link]</a> <a href="files/RhodesAndParra_ExecutiveFunctioning.pdf" target="_blank" style="color:teal">(pdf)</a>
 
+<br></br>
+
 ## In Progress
 
-Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., & Della Sala, S. (*under review*). Behavioural and Electrophysiological Correlates of Visual Working Memory Capacity During Change Detection Tasks.
+Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*under review*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power.
+	
+Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (*in prep*). Informed Guessing in Change Detection.
 
-Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (*in prep*). Healthy Ageing and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes.
+Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., & Della Sala, S. (*in prep*). Electrophysiological Correlates of the Short-Term Memory Binding Task.
 
+<!--
 Parra, M.A., Trujillo, N., Ibanez, A., Mikulan, E., Baglivo, F., Estrada, D., Rhodes, S., Della Sala, S., Manes, F., & Lopera, F. (*in prep*) Event-Related Potentials and Brain Network Signatures of Visual Short-Term Memory Binding Deficits in the Prodromal Stages of Familial Alzheimer’s Disease.
+-->
+
+<br></br>
 
 ## Selected Posters and Presentations
 
@@ -42,6 +60,7 @@ Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2014, Sep). *Does Healthy A
 
 Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2014, Apr). *Is Feature Binding in Visual Working Memory Age Invariant?* Poster presented at the Cognitive Aging Conference 2014, Atlanta, Georgia. <a href="files/RhodesEtAlAtlanta.pdf" target="_blank" style="color:teal">(pdf)</a>
 
+<!--
 <br></br>
 
 ## Current Projects
@@ -57,3 +76,4 @@ In recognition experiments it is important to separate out the contribution of a
 ### Informed Guessing in Change Detection
 
 In change detection observers are presented with a set of items (e.g. colours) to remember and following a brief delay these items are re-presented with the possibility that *one* item has changed. Assuming observers occasionally don't have enough information to perform the judgment (i.e. some items were not encoded or retained) can they use knowledge of the number of items they have in memory and the number of items presented to inform their guessing? Only one or two studies have assessed this <a href="http://www.ncbi.nlm.nih.gov/pubmed/21331668" target="_blank">proposal</a>.
+-->
