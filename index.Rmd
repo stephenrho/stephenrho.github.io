@@ -6,9 +6,11 @@ title: "About"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I'm currently working at the University of Missouri as a post-doctoral research fellow on the ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>). I recently completed my PhD at the University of Edinburgh under the supervision of <a href="http://www.ppls.ed.ac.uk/psychology/people/robert-logie" target="_blank">Professor Robert Logie</a>, <a href="https://www.hw.ac.uk/schools/management-languages/staff-directory/mario-parra-rodriguez.htm" target="_blank">Dr Mario Parra</a> and <a href="http://www.ppls.ed.ac.uk/people/nelson-cowan" target="_blank">Professor Nelson Cowan</a>.
+I'm a postdoctoral research fellow at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).
 
+<br></br>
 <div style="text-align: center"><img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400"></div>
 <br></br>
-My PhD project focused on the effect of healthy ageing on the ability to bind and temporarily retain conjunctions of features in visual working memory as well as measurement issues surrounding this question (and related areas). Currently my research interests lie in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modelling of behaviour.
+
+I am interested in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modeling of behaviour.
 

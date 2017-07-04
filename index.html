@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
 
@@ -19,12 +19,11 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="libs/highlight/default.css"
-      type="text/css" />
-<script src="libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -40,26 +39,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 
-<link rel="stylesheet" href="font.css" type="text/css" />
-
-</head>
-
-<body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
+<style type="text/css">
 h1 {
   font-size: 34px;
 }
@@ -81,6 +61,31 @@ h5 {
 h6 {
   font-size: 12px;
 }
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="font.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
 .tabbed-pane {
   padding-top: 12px;
 }
@@ -88,6 +93,7 @@ button.code-folding-btn:focus {
   outline: none;
 }
 </style>
+
 
 <style type="text/css">
 /* padding for bootstrap navbar */
@@ -145,7 +151,6 @@ $(document).ready(function () {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.0/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -198,16 +203,19 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">About</h1>
+
+<h1 class="title toc-ignore">About</h1>
 
 </div>
 
 
-<p>I’m currently working at the University of Missouri as a post-doctoral research fellow on the ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>). I recently completed my PhD at the University of Edinburgh under the supervision of <a href="http://www.ppls.ed.ac.uk/psychology/people/robert-logie" target="_blank">Professor Robert Logie</a>, <a href="https://www.hw.ac.uk/schools/management-languages/staff-directory/mario-parra-rodriguez.htm" target="_blank">Dr Mario Parra</a> and <a href="http://www.ppls.ed.ac.uk/people/nelson-cowan" target="_blank">Professor Nelson Cowan</a>.</p>
+<p>I’m a postdoctoral research fellow at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).</p>
+<br></br>
 <div style="text-align: center">
 <img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400">
 </div>
-<p><br></br> My PhD project focused on the effect of healthy ageing on the ability to bind and temporarily retain conjunctions of features in visual working memory as well as measurement issues surrounding this question (and related areas). Currently my research interests lie in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modelling of behaviour.</p>
+<p><br></br></p>
+<p>I am interested in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modeling of behaviour.</p>
 
 
 
@@ -217,9 +225,13 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 
