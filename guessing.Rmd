@@ -1,0 +1,17 @@
+---
+title: "Modeling Guessing Behavior in Change Detection"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Change detection tasks are very popular in cognitive psychology, especially among working memory researchers. In these tasks participants must remember an array of objects (e.g. colored squares, faces, abstract shapes) to make a "same" or "change" decision following a brief delay. Usually memory is either probed with a single item (which was either in the initial study set or not) or with a whole display containing the same number of objects, and the task is to decide whether any (usually 1) have changed. There are more complicated versions of this general task; in the example below, observers must retain the conjunction of color and shape in order to detect the change (see, e.g., <a href="files/RhodesEtAl2017.pdf" target="_blank">Rhodes et al., 2017</a>).
+
+<br></br>
+<div style="text-align: center"><img src="files/cd.gif" title="single probe change detection task" width="200"></div>
+<br></br>
+
+These tasks are popular as there are simple multinomial models that allow researchers to estimate the (average) number of items an individual could remember across a series of trials (often referred to as *k*; see <a href="https://www.ncbi.nlm.nih.gov/pubmed/3226885" target="_blank">Pashler, 1988</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/11515286" target="_blank">Cowan, 2001</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3070885/" target="_blank">Rouder et al., 2011</a>). However, for the estimate to be accurate we need a reasonable idea of how people use information (i.e. the items stored in working memory) and the constraints on this information use imposed by the task (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3070885/" target="_blank">Rouder et al., 2011</a> for more discussion of this).
+
+Nelson Cowan, Kyle Hardman, Robert Logie and I recently looked at how observers use the constraints of change detection tasks to guide guessing behavior. Our results suggest that people utilize more information than current models for estimating *k* assume. More information on this can be found in the <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank">paper</a> which is now out at *JEP:LMC* and the JAGS code that I wrote to implement these models can be found <a href="https://github.com/stephenrho/Guessing" target="_blank">here</a>.

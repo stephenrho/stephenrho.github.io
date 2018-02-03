@@ -6,7 +6,7 @@ title: "CV"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-A more complete CV can be found [here](https://www.dropbox.com/s/dtohay90uud161b/CV%20S.Rhodes.pdf).
+A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">here</a>.
 
 <br></br>
 
@@ -21,7 +21,7 @@ A more complete CV can be found [here](https://www.dropbox.com/s/dtohay90uud161b
 
 ## Publications
 
-Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (*in press*). Informed Guessing in Change Detection. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a>
+Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (*in press*). Informed Guessing in Change Detection. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a>
 
 Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2017). Healthy Aging and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes. *Psychology & Aging, 32* (4), 354-366. <a href="http://psycnet.apa.org/journals/pag/32/4/354/" target="_blank">[link]</a> <a href="files/RhodesEtAl2017.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/BindingData/tree/master/RhodesEtAl_PsychAging" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -38,9 +38,13 @@ Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Gero
 
 ## In Progress
 
-Rhodes, S. & Cowan, N. (*submitted*). Attention in Working Memory: Attention is Needed but it Yearns to be Free.
+Rhodes, S. & Cowan, N. (*revision submitted*). Attention in Working Memory: Attention is Needed but it Yearns to be Free.
 
-Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*in prep*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power.
+Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*submitted*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power.
+
+Morey, C., Rhodes, S. & Cowan, N. (*submitted*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.
+
+Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in prep*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.
 
 Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., & Della Sala, S. (*in prep*). Electrophysiological Correlates of the Short-Term Memory Binding Task.
 

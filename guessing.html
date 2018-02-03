@@ -11,7 +11,7 @@
 
 
 
-<title>Visual Angle in R</title>
+<title>Modeling Guessing Behavior in Change Detection</title>
 
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -205,42 +205,19 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Visual Angle in R</h1>
+<h1 class="title toc-ignore">Modeling Guessing Behavior in Change Detection</h1>
 
 </div>
 
 
-<p>Here are some simple R functions I’ve found useful for calculating <a href="https://en.wikipedia.org/wiki/Visual_angle">visual angle</a> or inferring size from reports of visual angle in papers.</p>
-<p>The function <code>visAngle()</code> takes two arguments; the size of the stimulus and the viewing distance of the observer (both in the same units). It returns the visual angle of the stimulus.</p>
-<pre class="r"><code>visAngle &lt;- function(size, distance){
-  # this function calculates visual angle
-  # size and distance must be in the same units
-  Rad = 2*atan(size/(2*distance))
-  Ang = Rad*(180/pi)
-  return(Ang)
-}
-
-visAngle(size = 1, distance = 57) # why people use 57 cm as viewing distance</code></pre>
-<pre><code>## [1] 1.005163</code></pre>
-<p>Occasionally, to replicate a paradigm, you’ll want to calculate the size of a stimulus from a reported visual angle and viewing distance. The function <code>desiredSize()</code> takes a visual angle and distance and returns the stimulus size in the same units as the distance.</p>
-<pre class="r"><code>desiredSize &lt;- function(visAngle, distance){
-  # this function gives desired size of stimulus
-  # given visual angle and distance
-  # size returned is in same units and distance
-  Rad = visAngle/(180/pi) # or pi*(visAngle/180)
-  size = 2*distance*tan(Rad/2)
-  return(size)
-}
-
-desiredSize(visAngle = 2.5, distance = 40)</code></pre>
-<pre><code>## [1] 1.745606</code></pre>
-<p>Proof they actually work!</p>
-<pre class="r"><code>dist = 50
-size = 5
-ang = visAngle(size = size, distance = dist)
-
-desiredSize(visAngle = ang, distance = dist)</code></pre>
-<pre><code>## [1] 5</code></pre>
+<p>Change detection tasks are very popular in cognitive psychology, especially among working memory researchers. In these tasks participants must remember an array of objects (e.g. colored squares, faces, abstract shapes) to make a “same” or “change” decision following a brief delay. Usually memory is either probed with a single item (which was either in the initial study set or not) or with a whole display containing the same number of objects, and the task is to decide whether any (usually 1) have changed. There are more complicated versions of this general task; in the example below, observers must retain the conjunction of color and shape in order to detect the change (see, e.g., <a href="files/RhodesEtAl2017.pdf" target="_blank">Rhodes et al., 2017</a>).</p>
+<br></br>
+<div style="text-align: center">
+<img src="files/cd.gif" title="single probe change detection task" width="200">
+</div>
+<p><br></br></p>
+<p>These tasks are popular as there are simple multinomial models that allow researchers to estimate the (average) number of items an individual could remember across a series of trials (often referred to as <em>k</em>; see <a href="https://www.ncbi.nlm.nih.gov/pubmed/3226885" target="_blank">Pashler, 1988</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/11515286" target="_blank">Cowan, 2001</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3070885/" target="_blank">Rouder et al., 2011</a>). However, for the estimate to be accurate we need a reasonable idea of how people use information (i.e. the items stored in working memory) and the constraints on this information use imposed by the task (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3070885/" target="_blank">Rouder et al., 2011</a> for more discussion of this).</p>
+<p>Nelson Cowan, Kyle Hardman, Robert Logie and I recently looked at how observers use the constraints of change detection tasks to guide guessing behavior. Our results suggest that people utilize more information than current models for estimating <em>k</em> assume. More information on this can be found in the <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank">paper</a> which is now out at <em>JEP:LMC</em> and the JAGS code that I wrote to implement these models can be found <a href="https://github.com/stephenrho/Guessing" target="_blank">here</a>.</p>
 
 
 
