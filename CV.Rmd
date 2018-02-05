@@ -21,7 +21,9 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
-Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (*in press*). Informed Guessing in Change Detection. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a>
+Rhodes, S. & Cowan, N. (*in press*). Attention in Working Memory: Attention is Needed but it Yearns to be Free. *Annals of the New York Academy of Sciences*.
+
+Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (2017). Informed Guessing in Change Detection. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a>
 
 Rhodes, S., Parra, M. A., Cowan, N., & Logie, R. H. (2017). Healthy Aging and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes. *Psychology & Aging, 32* (4), 354-366. <a href="http://psycnet.apa.org/journals/pag/32/4/354/" target="_blank">[link]</a> <a href="files/RhodesEtAl2017.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/BindingData/tree/master/RhodesEtAl_PsychAging" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -37,8 +39,6 @@ Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Gero
 <br></br>
 
 ## In Progress
-
-Rhodes, S. & Cowan, N. (*revision submitted*). Attention in Working Memory: Attention is Needed but it Yearns to be Free.
 
 Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*submitted*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power.
 
