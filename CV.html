@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -20,8 +20,8 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="libs/highlightjs-1.1/highlight.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -224,7 +226,7 @@ $(document).ready(function () {
 </div>
 <div id="publications" class="section level2">
 <h2>Publications</h2>
-<p>Rhodes, S. &amp; Cowan, N. (<em>in press</em>). Attention in Working Memory: Attention is Needed but it Yearns to be Free. <em>Annals of the New York Academy of Sciences</em>.</p>
+<p>Rhodes, S. &amp; Cowan, N. (<em>in press</em>). Attention in Working Memory: Attention is Needed but it Yearns to be Free. <em>Annals of the New York Academy of Sciences</em>. <a href="files/rhodes_cowan_nyas.pdf" target="_blank" style="color:teal">(pdf)</a></p>
 <p>Rhodes, S., Cowan, N., Hardman, K. O., &amp; Logie, R. H. (2017). Informed Guessing in Change Detection. <em>Journal of Experimental Psychology: Learning, Memory, &amp; Cognition</em>. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a></p>
 <p>Rhodes, S., Parra, M. A., Cowan, N., &amp; Logie, R. H. (2017). Healthy Aging and Visual Working Memory: The Role of Mixing Feature and Conjunction Changes. <em>Psychology &amp; Aging, 32</em> (4), 354-366. <a href="http://psycnet.apa.org/journals/pag/32/4/354/" target="_blank">[link]</a> <a href="files/RhodesEtAl2017.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/BindingData/tree/master/RhodesEtAl_PsychAging" target="_blank" style="color:firebrick">(data/code)</a></p>
 <p>Smith, K., Ricaud, B., Shahid, N., Rhodes, S., Starr, J. M., Ibanez, A., Parra, M. A., Escudero, J., &amp; Vandergheynst, P. (2017). Locating Temporal Functional Dynamics of Visual Short-Term Memory Binding using Graph Modular Dirichlet Energy. <em>Scientific Reports, 7</em>, 42013. <a href="https://www.nature.com/articles/srep42013" target="_blank">[link]</a> <a href="files/SmithEtAl2017.pdf" target="_blank" style="color:teal">(pdf)</a></p>
@@ -237,7 +239,7 @@ $(document).ready(function () {
 <h2>In Progress</h2>
 <p>Rhodes, S., Cowan, N., Parra, M. A., &amp; Logie, R. H. (<em>submitted</em>). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power.</p>
 <p>Morey, C., Rhodes, S. &amp; Cowan, N. (<em>submitted</em>). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.</p>
-<p>Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., &amp; Logie, R. H. (<em>in prep</em>). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.</p>
+<p>Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., &amp; Logie, R. H. (<em>submitted</em>). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.</p>
 <p>Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., &amp; Della Sala, S. (<em>in prep</em>). Electrophysiological Correlates of the Short-Term Memory Binding Task.</p>
 <!--
 Parra, M.A., Trujillo, N., Ibanez, A., Mikulan, E., Baglivo, F., Estrada, D., Rhodes, S., Della Sala, S., Manes, F., & Lopera, F. (*in prep*) Event-Related Potentials and Brain Network Signatures of Visual Short-Term Memory Binding Deficits in the Prodromal Stages of Familial Alzheimer’s Disease.
@@ -276,7 +278,7 @@ $(document).ready(function () {
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

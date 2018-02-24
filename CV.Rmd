@@ -21,7 +21,7 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
-Rhodes, S. & Cowan, N. (*in press*). Attention in Working Memory: Attention is Needed but it Yearns to be Free. *Annals of the New York Academy of Sciences*.
+Rhodes, S. & Cowan, N. (*in press*). Attention in Working Memory: Attention is Needed but it Yearns to be Free. *Annals of the New York Academy of Sciences*. <a href="files/rhodes_cowan_nyas.pdf" target="_blank" style="color:teal">(pdf)</a>
 
 Rhodes, S., Cowan, N., Hardman, K. O., & Logie, R. H. (2017). Informed Guessing in Change Detection. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -44,7 +44,7 @@ Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*submitted*). Interaction E
 
 Morey, C., Rhodes, S. & Cowan, N. (*submitted*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.
 
-Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in prep*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.
+Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*submitted*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.
 
 Parra, M. A., Ibanez, A., Rhodes, S., Baglivo, F., Kargieman, L., Garcia, M. C., Silva, W., Ciraolo, C., Vaucheret, E., Sigman, M., Bekinschtein, T. A., Starr, J., Manes, F., & Della Sala, S. (*in prep*). Electrophysiological Correlates of the Short-Term Memory Binding Task.
 
