@@ -4,4 +4,4 @@ title: "Simulating Interaction Effects in Detection/ Recognition Paradigms"
 
 [Here](https://github.com/stephenrho/MeasuresAndErrors) you can find the code I wrote to run simulations of data conforming to signal detection theory (SDT) or two-high threshold theory (THT) accounts of detection and recognition. The simulated data follow a 2 by 2 mixed design (e.g. group by condition) and were used to assess type I error rate and power for three commonly used measures of sensitivity; $d'$, $A'$, and $P_{r}$ (or hits minus false-alarms).
 
-The manuscript accompanying this, "Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power", is currently in preparation. 
+The manuscript accompanying this is now published in *Behavior Research Methods* and can be found [here](files/Rhodes-et-al-BRM.pdf)

@@ -1,0 +1,15 @@
+---
+title: "Workshop on Modeling Cognitive Processes in R"
+---
+
+[Julia Haaf](https://twitter.com/JuliaHaaf) and I organized a two-day workshop on modeling cognitive processing in R. The workshop covered:
+
+- A quick introduction to [R](https://www.r-project.org/)
+- Maximum likelihood estimation in R
+- Signal detection theory (SDT) and multinomial processing tree (MPT) models
+- Fitting these models to the group and individual participants via maximum likelihood
+- Introduction to Bayesian estimation 
+- Bayesian estimation of cognitive models using [JAGS](http://mcmc-jags.sourceforge.net/) and [rjags](https://cran.r-project.org/web/packages/rjags/rjags.pdf)
+
+The materials for this workshop can be found [here](https://github.com/stephenrho/CognitiveModelingWorkshop)
+
