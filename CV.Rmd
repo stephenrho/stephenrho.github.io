@@ -21,6 +21,10 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
+Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in press*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan. *Journal of Experimental Psychology: General*.
+
+Doherty, J. M., Belletier, C., Rhodes, S., Jaroslawska, A., Camos, V., Barrouillet, P., Cowan, N., Naveh- Benjamin, M., & Logie, R. H. (*in press*). Dual-Task Costs in Working Memory: An Adversarial Collaboration. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.researchgate.net/publication/327867355_Dual-task_costs_in_working_memory_An_adversarial_collaboration" target="_blank" style="color:teal">(pdf)</a> <a href="https://bit.ly/2KTKMgb" target="_blank" style="color:firebrick">(data/code)</a>
+
 Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*in press*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. *Behavior Research Methods*. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a>
 
 Rhodes, S. & Cowan, N. (2018). Attention in Working Memory: Attention is Needed but it Yearns to be Free. *Annals of the New York Academy of Sciences, 1424*(1), 52-63. <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.13652" target="_blank">[link]</a> <a href="files/rhodes_cowan_nyas.pdf" target="_blank" style="color:teal">(pdf)</a>
@@ -42,11 +46,11 @@ Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Gero
 
 ## In Progress
 
-Morey, C., Rhodes, S. & Cowan, N. (*submitted*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.
+Morey, C., Rhodes, S. & Cowan, N. (*under review*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.
 
-Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*submitted*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan.
-
-Doherty, J. M., Belletier, C., Rhodes, S., Jaroslawska, A., Camos, V., Barrouillet, P., Cowan, N., Naveh- Benjamin, M., & Logie, R. H. (*submitted*). Dual-Task Costs in Working Memory: An Adversarial Collaboration.
+Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., & Rouder, J. N. (*under review*). Revisiting the Remember-Know Task: A Replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a>
+		
+Jaroslawska, A. J., & Rhodes, S. (*under review*). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. <a href="https://psyarxiv.com/x2uk7/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 <br></br>
 
