@@ -12,7 +12,8 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Education and Training
 
-+ Post-Doctoral Research Fellow: *The University of Missouri* (2016 -- present)
++ Postdoctoral Research Fellow: *Rotman Research Institute* (2019 -- present)
++ Postdoctoral Research Fellow: *The University of Missouri* (2016 -- 2019)
 + PhD Psychology: *The University of Edinburgh* (2012 -- 2016)
 + MSc Human Cognitive Neuropsychology: *The University of Edinburgh* (2011 -- 2012)
 + BSc (hons) Psychology: *The University of Leeds* (2008 -- 2011)
@@ -21,9 +22,11 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
-Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in press*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan. *Journal of Experimental Psychology: General*.
+Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in press*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan. *Journal of Experimental Psychology: General*. <a href="https://www.researchgate.net/publication/328388904_Storage_and_processing_in_working_memory_Assessing_dual_task_performance_and_task_prioritization_across_the_adult_lifespan" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/b2epe/" target="_blank" style="color:firebrick">(data/code)</a>
 
 Doherty, J. M., Belletier, C., Rhodes, S., Jaroslawska, A., Camos, V., Barrouillet, P., Cowan, N., Naveh- Benjamin, M., & Logie, R. H. (*in press*). Dual-Task Costs in Working Memory: An Adversarial Collaboration. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.researchgate.net/publication/327867355_Dual-task_costs_in_working_memory_An_adversarial_collaboration" target="_blank" style="color:teal">(pdf)</a> <a href="https://bit.ly/2KTKMgb" target="_blank" style="color:firebrick">(data/code)</a>
+
+Morey, C., Rhodes, S. & Cowan, N. (*in press*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. *Cortex*. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a>
 
 Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*in press*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. *Behavior Research Methods*. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -46,11 +49,11 @@ Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Gero
 
 ## In Progress
 
-Morey, C., Rhodes, S. & Cowan, N. (*under review*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory.
-
 Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., & Rouder, J. N. (*under review*). Revisiting the Remember-Know Task: A Replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a>
 		
 Jaroslawska, A. J., & Rhodes, S. (*under review*). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. <a href="https://psyarxiv.com/x2uk7/" target="_blank" style="color:firebrick">(pre-print)</a>
+
+Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (*under review*). Age-Related Differences in Recall and Recognition: A Meta Analysis. <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 <br></br>
 

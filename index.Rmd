@@ -6,11 +6,11 @@ title: "About"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I'm a postdoctoral research fellow at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).
+I'm a postdoctoral research fellow at the <a href="https://www.baycrest.org/Baycrest/Research-Innovation/About-Us/Rotman-Research-Institute" target="_blank">Rotman Research Institute</a>. Prior to that I was at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).
 
 <br></br>
 <div style="text-align: center"><img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400"></div>
 <br></br>
 
-I am interested in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modeling of behaviour.
+<!--I am interested in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modeling of behaviour.-->
 

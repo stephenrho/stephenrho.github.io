@@ -3,12 +3,13 @@ title: "Contact"
 ---
 
 Stephen Rhodes  
-Department of Psychological Sciences  
-9J McAlester Hall  
-University of Missouri  
-Columbia, MO 65211-2500
+Rotman Research Institute  
+Baycrest Health Sciences  
+3560 Bathurst Street  
+Toronto, ON  
+M6A 2E1  
 
-email: rhodessp@missouri.edu
+email: srhodes@research.baycrest.org
 
 twitter: @[stephenrho](https://twitter.com/stephenrho)
 
