@@ -22,11 +22,15 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
+Jaroslawska, A. J., & Rhodes, S. (*in press*). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. *Psychology & Aging*. <a href="files/Jaroslawska-Rhodes-PAG.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/bp359/" target="_blank" style="color:firebrick">(data/code)</a>
+
+Rhodes, S. & Cowan, N. (*in press*). Flexible Representations in Visual Working Memory and Interactions with Long-Term Learning: Commentary on the Special Issue. *British Journal of Psychology*. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/bjop.12380" target="_blank">[link]</a> <a href="files/rhodes-cowan-bjp.pdf" target="_blank" style="color:teal">(pdf)</a>
+
 Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., & Logie, R. H. (*in press*). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan. *Journal of Experimental Psychology: General*. <a href="https://www.researchgate.net/publication/328388904_Storage_and_processing_in_working_memory_Assessing_dual_task_performance_and_task_prioritization_across_the_adult_lifespan" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/b2epe/" target="_blank" style="color:firebrick">(data/code)</a>
 
 Doherty, J. M., Belletier, C., Rhodes, S., Jaroslawska, A., Camos, V., Barrouillet, P., Cowan, N., Naveh- Benjamin, M., & Logie, R. H. (*in press*). Dual-Task Costs in Working Memory: An Adversarial Collaboration. *Journal of Experimental Psychology: Learning, Memory, & Cognition*. <a href="https://www.researchgate.net/publication/327867355_Dual-task_costs_in_working_memory_An_adversarial_collaboration" target="_blank" style="color:teal">(pdf)</a> <a href="https://bit.ly/2KTKMgb" target="_blank" style="color:firebrick">(data/code)</a>
 
-Morey, C., Rhodes, S. & Cowan, N. (*in press*). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. *Cortex*. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a>
+Morey, C., Rhodes, S. & Cowan, N. (2019). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. *Cortex, 112*, 149-161. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a>
 
 Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*in press*). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. *Behavior Research Methods*. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -50,8 +54,6 @@ Rhodes, S., & Parra, M. A. (2016). *Executive Functioning*. Encyclopedia of Gero
 ## In Progress
 
 Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., & Rouder, J. N. (*under review*). Revisiting the Remember-Know Task: A Replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a>
-		
-Jaroslawska, A. J., & Rhodes, S. (*under review*). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. <a href="https://psyarxiv.com/x2uk7/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (*under review*). Age-Related Differences in Recall and Recognition: A Meta Analysis. <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:firebrick">(pre-print)</a>
 

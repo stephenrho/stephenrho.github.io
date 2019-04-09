@@ -70,9 +70,7 @@ h6 {
 
 <link rel="stylesheet" href="font.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -91,8 +89,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -108,7 +112,6 @@ body {
   padding-top: 66px;
   margin-top: -66px;
 }
-
 .section h2 {
   padding-top: 66px;
   margin-top: -66px;
@@ -128,6 +131,43 @@ body {
 .section h6 {
   padding-top: 66px;
   margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -149,19 +189,85 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -228,9 +334,11 @@ $(document).ready(function () {
 </div>
 <div id="publications" class="section level2">
 <h2>Publications</h2>
+<p>Jaroslawska, A. J., &amp; Rhodes, S. (<em>in press</em>). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. <em>Psychology &amp; Aging</em>. <a href="files/Jaroslawska-Rhodes-PAG.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/bp359/" target="_blank" style="color:firebrick">(data/code)</a></p>
+<p>Rhodes, S. &amp; Cowan, N. (<em>in press</em>). Flexible Representations in Visual Working Memory and Interactions with Long-Term Learning: Commentary on the Special Issue. <em>British Journal of Psychology</em>. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/bjop.12380" target="_blank">[link]</a> <a href="files/rhodes-cowan-bjp.pdf" target="_blank" style="color:teal">(pdf)</a></p>
 <p>Rhodes, S., Jaroslawska, A. J., Doherty, J. M., Barrouillet, P., Camos, V., Cowan, N., Naveh-Benjamin, M., &amp; Logie, R. H. (<em>in press</em>). Storage and Processing in Working Memory: Assessing Dual Task Performance and Task Prioritization Across the Adult Lifespan. <em>Journal of Experimental Psychology: General</em>. <a href="https://www.researchgate.net/publication/328388904_Storage_and_processing_in_working_memory_Assessing_dual_task_performance_and_task_prioritization_across_the_adult_lifespan" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/b2epe/" target="_blank" style="color:firebrick">(data/code)</a></p>
 <p>Doherty, J. M., Belletier, C., Rhodes, S., Jaroslawska, A., Camos, V., Barrouillet, P., Cowan, N., Naveh- Benjamin, M., &amp; Logie, R. H. (<em>in press</em>). Dual-Task Costs in Working Memory: An Adversarial Collaboration. <em>Journal of Experimental Psychology: Learning, Memory, &amp; Cognition</em>. <a href="https://www.researchgate.net/publication/327867355_Dual-task_costs_in_working_memory_An_adversarial_collaboration" target="_blank" style="color:teal">(pdf)</a> <a href="https://bit.ly/2KTKMgb" target="_blank" style="color:firebrick">(data/code)</a></p>
-<p>Morey, C., Rhodes, S. &amp; Cowan, N. (<em>in press</em>). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. <em>Cortex</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a></p>
+<p>Morey, C., Rhodes, S. &amp; Cowan, N. (2019). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. <em>Cortex, 112</em>, 149-161. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a></p>
 <p>Rhodes, S., Cowan, N., Parra, M. A., &amp; Logie, R. H. (<em>in press</em>). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. <em>Behavior Research Methods</em>. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a></p>
 <p>Rhodes, S. &amp; Cowan, N. (2018). Attention in Working Memory: Attention is Needed but it Yearns to be Free. <em>Annals of the New York Academy of Sciences, 1424</em>(1), 52-63. <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.13652" target="_blank">[link]</a> <a href="files/rhodes_cowan_nyas.pdf" target="_blank" style="color:teal">(pdf)</a></p>
 <p>Rhodes, S., Cowan, N., Hardman, K. O., &amp; Logie, R. H. (2018). Informed Guessing in Change Detection. <em>Journal of Experimental Psychology: Learning, Memory, &amp; Cognition, 44</em>(7), 1023-1035. <a href="https://www.ncbi.nlm.nih.gov/pubmed/29265829" target="_blank">[link]</a> <a href="https://github.com/stephenrho/Guessing/blob/master/paper/Rhodes_et_al_Guessing.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/Guessing" target="_blank" style="color:firebrick">(data/code)</a></p>
@@ -244,7 +352,6 @@ $(document).ready(function () {
 <div id="in-progress" class="section level2">
 <h2>In Progress</h2>
 <p>Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., &amp; Rouder, J. N. (<em>under review</em>). Revisiting the Remember-Know Task: A Replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a></p>
-<p>Jaroslawska, A. J., &amp; Rhodes, S. (<em>under review</em>). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. <a href="https://psyarxiv.com/x2uk7/" target="_blank" style="color:firebrick">(pre-print)</a></p>
 <p>Rhodes, S., Greene, N. R., &amp; Naveh-Benjamin, M. (<em>under review</em>). Age-Related Differences in Recall and Recognition: A Meta Analysis. <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:firebrick">(pre-print)</a></p>
 <p><br></br></p>
 </div>
