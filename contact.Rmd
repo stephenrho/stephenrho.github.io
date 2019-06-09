@@ -17,4 +17,6 @@ twitter: @[stephenrho](https://twitter.com/stephenrho)
 
 [Researchgate](https://www.researchgate.net/profile/Stephen_Rhodes4)
 
+<!--
 <div style="text-align: center"><img src="files/sr.jpg" width="400"></div>
+-->
