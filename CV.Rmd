@@ -22,7 +22,7 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
-- Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (*in press*). Age-Related Differences in Recall and Recognition: A Meta Analysis. *Psychonomic Bulletin & Review, 26*(5), 1529-1547. <a href="https://link.springer.com/article/10.3758/s13423-019-01649-y" target="_blank">[link]</a> <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/5gx86/" target="_blank" style="color:firebrick">(data/code)</a>
+- Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (2019). Age-Related Differences in Recall and Recognition: A Meta Analysis. *Psychonomic Bulletin & Review, 26*(5), 1529-1547. <a href="https://link.springer.com/article/10.3758/s13423-019-01649-y" target="_blank">[link]</a> <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/5gx86/" target="_blank" style="color:firebrick">(data/code)</a>
 
 - Jaroslawska, A. J., & Rhodes, S. (2019). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. *Psychology & Aging, 34*(4), 512-530. <a href="https://psycnet.apa.org/record/2019-24512-001" target="_blank">[link]</a> <a href="files/Jaroslawska-Rhodes-PAG.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/bp359/" target="_blank" style="color:firebrick">(data/code)</a>
 
