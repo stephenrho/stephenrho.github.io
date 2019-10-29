@@ -22,7 +22,7 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Publications
 
-- Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (*in press*). Age-Related Differences in Recall and Recognition: A Meta Analysis. *Psychonomic Bulletin & Review*. <a href="https://link.springer.com/article/10.3758/s13423-019-01649-y" target="_blank">[link]</a> <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/5gx86/" target="_blank" style="color:firebrick">(data/code)</a>
+- Rhodes, S., Greene, N. R., & Naveh-Benjamin, M. (*in press*). Age-Related Differences in Recall and Recognition: A Meta Analysis. *Psychonomic Bulletin & Review, 26*(5), 1529-1547. <a href="https://link.springer.com/article/10.3758/s13423-019-01649-y" target="_blank">[link]</a> <a href="https://psyarxiv.com/6pvjd/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/5gx86/" target="_blank" style="color:firebrick">(data/code)</a>
 
 - Jaroslawska, A. J., & Rhodes, S. (2019). Adult Age Differences in the Effects of Processing on Storage in Working Memory: A Meta-Analysis. *Psychology & Aging, 34*(4), 512-530. <a href="https://psycnet.apa.org/record/2019-24512-001" target="_blank">[link]</a> <a href="files/Jaroslawska-Rhodes-PAG.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/bp359/" target="_blank" style="color:firebrick">(data/code)</a>
 
@@ -34,7 +34,7 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 - Morey, C., Rhodes, S. & Cowan, N. (2019). Sensory-Motor Integration and Brain Lesions: Progress Toward Explaining Domain-Specific Phenomena Within Domain-General Working Memory. *Cortex, 112*, 149-161. <a href="https://www.sciencedirect.com/science/article/pii/S0010945218304118" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2018-cortex.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/wbmk7/" target="_blank" style="color:firebrick">(data/code)</a>
 
-- Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (2019). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. *Behavior Research Methods*. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a>
+- Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (2019). Interaction Effects on Common Measures of Sensitivity: Choice of Measure, Type I Error and Power. *Behavior Research Methods, 51*(5), 2209-2227. <a href="https://link.springer.com/article/10.3758%2Fs13428-018-1081-0" target="_blank">[link]</a> <a href="files/Rhodes-et-al-BRM.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/MeasuresAndErrors" target="_blank" style="color:firebrick">(data/code)</a>
 
 - Rhodes, S. & Cowan, N. (2018). Attention in Working Memory: Attention is Needed but it Yearns to be Free. *Annals of the New York Academy of Sciences, 1424*(1), 52-63. <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.13652" target="_blank">[link]</a> <a href="files/rhodes_cowan_nyas.pdf" target="_blank" style="color:teal">(pdf)</a>
 

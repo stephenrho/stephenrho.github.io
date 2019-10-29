@@ -11,6 +11,3 @@ I'm a postdoctoral research fellow at the <a href="https://www.baycrest.org/Bayc
 <br></br>
 <div style="text-align: center"><img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400"></div>
 <br></br>
-
-<!--I am interested in models of short-term/ working memory and their potential application to practical problems, such as the early identification of disease. I am also interested in the more foundational issues of measurement and modeling of behaviour.-->
-
