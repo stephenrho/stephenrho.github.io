@@ -2,8 +2,9 @@
 title: "Workshop on Bayesian Data Analysis (using brms and Stan)"
 ---
 
-[Here](https://github.com/stephenrho/bayes-workshop) are materials for a workshop I gave at the Rotman Research Institute in Oct 2019 on Bayesian data analysis. The workshop aims to provide:
+[Here](https://github.com/stephenrho/bayes-workshop) are materials for a workshop on Bayesian data analysis that I gave at the Rotman Research Institute (Oct 2019) and then at Case Western Reserve University (Feb 2020). The workshop aims to provide:
 
 - A conceptual understanding of Bayesian analysis
 - An introduction to the [`brms`](https://cran.r-project.org/web/packages/brms/index.html) package for `R` and example analyses
 - An introduction to the [`Stan`](https://mc-stan.org/) language (and [`rstan`](https://cran.r-project.org/web/packages/rstan/index.html))
+- There are also slides giving a more general introduction to mixed models and MCMC sampling
