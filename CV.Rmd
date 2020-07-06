@@ -28,7 +28,9 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 <a href="" target="_blank" style="color:firebrick">(data/code)</a>
 -->
 
-- Cowan, N., Belletier, C., Doherty, J. M., Jaroslawska, A. J., Rhodes, S., Forsberg, A., Naveh-Benjamin, M., Barrouillet, P. Camos, V., & Logie, R. H. (*in press*). How do scientific views change? Notes from an extended adversarial collaboration. *Perspectives on Psychological Science*. <a href="https://www.research.ed.ac.uk/portal/files/130136600/Cowan_et_al._in_press_2020_Perspectives_on_Psychological_Science_adversarial_collaboration.pdf" target="_blank" style="color:teal">(pdf)</a> 
+- Rhodes, S., Abbene, E., Meierhofer, A. M., & Naveh-Benjamin, M. (*in press*). Age differences in the precision of memory at short and long delays. *Psychology & Aging*. <a href="https://psyarxiv.com/zucr3/" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/delay-precision" target="_blank" style="color:firebrick">(data/code)</a>
+
+- Cowan, N., Belletier, C., Doherty, J. M., Jaroslawska, A. J., Rhodes, S., Forsberg, A., Naveh-Benjamin, M., Barrouillet, P. Camos, V., & Logie, R. H. (2020). How do scientific views change? Notes from an extended adversarial collaboration. *Perspectives on Psychological Science, 15*(4), 1011-1025. <a href="https://journals.sagepub.com/doi/abs/10.1177/1745691620906415" target="_blank">[link]</a> <a href="http://stephenrho.github.io/files/cowan-et-al-2020.pdf" target="_blank" style="color:teal">(pdf)</a> 
 
 - Morey, C., Rhodes, S. & Cowan, N. (2020). Co-existing, contradictory working memory models are ready for progressive refinement: Reply to Logie. *Cortex, 123*, 200-202. <a href="https://www.sciencedirect.com/science/article/pii/S0010945219303946" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2019-reply.pdf" target="_blank" style="color:teal">(pdf)</a>
 
@@ -65,11 +67,11 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## In Progress
 
-- Rhodes, S., Abbene, E., Meierhofer, A. M., & Naveh-Benjamin, M. (*under review*). Age differences in the precision of memory at short and long delays. <a href="https://psyarxiv.com/zucr3/" target="_blank" style="color:firebrick">(pre-print)</a>
-
 - Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., & Rouder, J. N. (*under review*). Revisiting the remember-know task: A replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 - Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*under review*). Binding in short-term visual memory: Reassessing whole display interference. <a href="https://psyarxiv.com/rng4a/" target="_blank" style="color:firebrick">(pre-print)</a>
+
+- Rhodes, S., Doherty, J. M., Jaroslawska, A., Forsberg, A., Belletier, C., Naveh-Benjamin, M., Cowan, N., Barrouillet, P., Camos, V., & Logie, R. H. (*under review*). Exploring the influence of temporal factors on age differences in working memory dual task costs. <a href="https://psyarxiv.com/esfm6/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 <br></br>
 
