@@ -30,6 +30,8 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 - Rhodes, S., Abbene, E., Meierhofer, A. M., & Naveh-Benjamin, M. (*in press*). Age differences in the precision of memory at short and long delays. *Psychology & Aging*. <a href="https://psyarxiv.com/zucr3/" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/delay-precision" target="_blank" style="color:firebrick">(data/code)</a>
 
+- Haaf, J. M., Rhodes, S., Naveh-Benjamin, M., Sun, T., Snyder, H. K., & Rouder, J. N. (*in press*). Revisiting the remember-know task: A replication of Gardiner and Java (1990). *Memory & Cognition*. <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/873sg" target="_blank" style="color:firebrick">(data/code)</a>
+
 - Cowan, N., Belletier, C., Doherty, J. M., Jaroslawska, A. J., Rhodes, S., Forsberg, A., Naveh-Benjamin, M., Barrouillet, P. Camos, V., & Logie, R. H. (2020). How do scientific views change? Notes from an extended adversarial collaboration. *Perspectives on Psychological Science, 15*(4), 1011-1025. <a href="https://journals.sagepub.com/doi/abs/10.1177/1745691620906415" target="_blank">[link]</a> <a href="http://stephenrho.github.io/files/cowan-et-al-2020.pdf" target="_blank" style="color:teal">(pdf)</a> 
 
 - Morey, C., Rhodes, S. & Cowan, N. (2020). Co-existing, contradictory working memory models are ready for progressive refinement: Reply to Logie. *Cortex, 123*, 200-202. <a href="https://www.sciencedirect.com/science/article/pii/S0010945219303946" target="_blank">[link]</a> <a href="files/morey-rhodes-cowan-2019-reply.pdf" target="_blank" style="color:teal">(pdf)</a>
@@ -66,8 +68,6 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 <br></br>
 
 ## In Progress
-
-- Haaf, J. M., Rhodes, S., Sun, T., Snyder, H. K., Naveh-Benjamin, M., & Rouder, J. N. (*under review*). Revisiting the remember-know task: A replication of Gardiner and Java (1990). <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 - Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*under review*). Binding in short-term visual memory: Reassessing whole display interference. <a href="https://psyarxiv.com/rng4a/" target="_blank" style="color:firebrick">(pre-print)</a>
 
