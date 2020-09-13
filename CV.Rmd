@@ -73,6 +73,8 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 - Rhodes, S., Doherty, J. M., Jaroslawska, A., Forsberg, A., Belletier, C., Naveh-Benjamin, M., Cowan, N., Barrouillet, P., Camos, V., & Logie, R. H. (*under review*). Exploring the influence of temporal factors on age differences in working memory dual task costs. <a href="https://psyarxiv.com/esfm6/" target="_blank" style="color:firebrick">(pre-print)</a>
 
+- Greene, N. R. & Rhodes, S. (*submitted*). A tutorial on cognitive modeling for cognitive aging research. <a href="https://psyarxiv.com/qsnea/" target="_blank" style="color:firebrick">(pre-print)</a>
+
 <br></br>
 
 <!--
