@@ -13,6 +13,7 @@
 
 <title>Logit Model for rjags</title>
 
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -22,6 +23,15 @@
 <script src="libs/navigation-1.1/tabsets.js"></script>
 <link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -299,6 +309,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
+
 <div class="fluid-row" id="header">
 
 
@@ -327,7 +338,7 @@ $(document).ready(function () {
 <p>The interpretation of <code>B0</code> as the grand mean and <code>B</code> as deflections from that mean requires the use of sum-to-zero (or effects) coding in the design matrix <code>X</code>. This is outlined in more detail in a worked example below and in <code>run.R</code>.</p>
 <div id="priors" class="section level3">
 <h3>Priors</h3>
-<p>As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a <span class="math inline">\(\text{Cauchy}(0, 2.5)\)</span> prior distribution on the grand mean parameter (<code>B0</code>) and deflection parameters (<code>B</code>). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects <span class="math inline">\(\pm 2.5\)</span> but given the Cauchy’s heavy tails does not rule out larger effects. One may modify the mean of the prior on <code>B0</code> to reflect prior expectation of above/ below chance performance.</p>
+<p>As per the suggestions of Gelman et al. (<a href="http://www.stat.columbia.edu/~gelman/research/published/priors11.pdf" target="_blank">2008</a>) we use a <span class="math inline">\(\text{Cauchy}(0, 2.5)\)</span> prior distribution on the grand mean parameter (<code>B0</code>) and deflection parameters (<code>B</code>). This is a weakly informative prior on the log odds scale and reflects a prior expectation of effects <span class="math inline">\(\pm 2.5\)</span> but given the Cauchy’s heavy tails does not rule out larger effects. One may modify the mean of the prior on <code>B0</code> to reflect prior expectation of above/ below chance performance.</p>
 <p>For the standard deviation of the participant effect (<code>sSD</code>) we use a <span class="math inline">\(\text{Gamma}(a, b)\)</span> distribution with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> set to produce a distribution with a mode of 0.1 and standard deviation of 10 which is extremely vague on the log odds scale. See <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/04/improved-programs-for-hierarchical.html" target="_blank">here</a> and <a href="http://doingbayesiandataanalysis.blogspot.co.uk/2012/01/parameterizing-gamma-distribution-by.html" target="_blank">here</a> for more explanation.</p>
 </div>
 </div>
