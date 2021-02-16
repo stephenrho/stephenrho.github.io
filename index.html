@@ -13,7 +13,6 @@
 
 <title>About</title>
 
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -31,7 +30,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -77,6 +76,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="font.css" type="text/css" />
 
@@ -309,7 +309,6 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-
 <div class="fluid-row" id="header">
 
 
@@ -319,7 +318,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>I’m a postdoctoral research fellow at the <a href="https://www.baycrest.org/Baycrest/Research-Innovation/About-Us/Rotman-Research-Institute" target="_blank">Rotman Research Institute</a>. Prior to that I was at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).</p>
+<p>Here you can find links to research papers and analysis code for previous projects. I previously was a postdoctoral fellow at the <a href="https://www.baycrest.org/Baycrest/Research-Innovation/About-Us/Rotman-Research-Institute" target="_blank">Rotman Research Institute</a> and, before that, at the University of Missouri working on an ESRC funded project, Working memory across the adult life-span: An adversarial collaboration (<a href="http://womaac.psy.ed.ac.uk/" target="_blank">WoMAAC</a>).</p>
 <br></br>
 <div style="text-align: center">
 <img src="files/skye.JPG" title="Old Man of Storr, Isle of Skye" width="400">
@@ -335,7 +334,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

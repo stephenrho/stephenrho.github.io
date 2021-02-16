@@ -12,7 +12,7 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 ## Education and Training
 
-+ Postdoctoral Research Fellow: *Rotman Research Institute* (2019 -- present)
++ Postdoctoral Research Fellow: *Rotman Research Institute* (2019 -- 2021)
 + Postdoctoral Research Fellow: *The University of Missouri* (2016 -- 2019)
 + PhD Psychology: *The University of Edinburgh* (2012 -- 2016)
 + MSc Human Cognitive Neuropsychology: *The University of Edinburgh* (2011 -- 2012)
@@ -32,9 +32,9 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 - Jaroslawska, A. J., Rhodes, S.,  Belletier, C., Doherty, J. M., Cowan, N., Naveh-Benjamin, M., Barrouillet, P. Camos, V., & Logie, R. H. (*in press*). What Affects the Magnitude of Age-Related Dual-Task Costs in Working Memory? The Role of Stimulus Domain and Access to Semantic Representations. *The Quarterly Journal of Experimental Psychology*. <a href="https://journals.sagepub.com/doi/abs/10.1177/1747021820970744" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/srm36/" target="_blank" style="color:firebrick">(data/code)</a>
 
-- Rhodes, S., Abbene, E., Meierhofer, A. M., & Naveh-Benjamin, M. (*in press*). Age differences in the precision of memory at short and long delays. *Psychology & Aging*. <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Fpag0000565" target="_blank">[link]</a> <a href="https://psyarxiv.com/zucr3/" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/delay-precision" target="_blank" style="color:firebrick">(data/code)</a>
+- Haaf, J. M., Rhodes, S., Naveh-Benjamin, M., Sun, T., Snyder, H. K., & Rouder, J. N. (2021). Revisiting the remember-know task: A replication of Gardiner and Java (1990). *Memory & Cognition, 49*, 46-66. <a href="https://link.springer.com/article/10.3758/s13421-020-01073-x" target="_blank">[link]</a> <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/873sg" target="_blank" style="color:firebrick">(data/code)</a>
 
-- Haaf, J. M., Rhodes, S., Naveh-Benjamin, M., Sun, T., Snyder, H. K., & Rouder, J. N. (*in press*). Revisiting the remember-know task: A replication of Gardiner and Java (1990). *Memory & Cognition*. <a href="https://link.springer.com/article/10.3758/s13421-020-01073-x" target="_blank">[link]</a> <a href="https://psyarxiv.com/2dyn7/" target="_blank" style="color:teal">(pdf)</a> <a href="https://osf.io/873sg" target="_blank" style="color:firebrick">(data/code)</a>
+- Rhodes, S., Abbene, E., Meierhofer, A. M., & Naveh-Benjamin, M. (2020). Age differences in the precision of memory at short and long delays. *Psychology & Aging, 35*(8), 1073–1089. <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Fpag0000565" target="_blank">[link]</a> <a href="https://psyarxiv.com/zucr3/" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/delay-precision" target="_blank" style="color:firebrick">(data/code)</a>
 
 - Cowan, N., Belletier, C., Doherty, J. M., Jaroslawska, A. J., Rhodes, S., Forsberg, A., Naveh-Benjamin, M., Barrouillet, P. Camos, V., & Logie, R. H. (2020). How do scientific views change? Notes from an extended adversarial collaboration. *Perspectives on Psychological Science, 15*(4), 1011-1025. <a href="https://journals.sagepub.com/doi/abs/10.1177/1745691620906415" target="_blank">[link]</a> <a href="http://stephenrho.github.io/files/cowan-et-al-2020.pdf" target="_blank" style="color:teal">(pdf)</a> 
 
@@ -62,9 +62,9 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 
 - Smith, K., Ricaud, B., Shahid, N., Rhodes, S., Starr, J. M., Ibanez, A., Parra, M. A., Escudero, J., & Vandergheynst, P. (2017). Locating temporal functional dynamics of visual short-term memory binding using graph modular Dirichlet energy. *Scientific Reports, 7*, 42013. <a href="https://www.nature.com/articles/srep42013" target="_blank">[link]</a> <a href="files/SmithEtAl2017.pdf" target="_blank" style="color:teal">(pdf)</a>
 
-- Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2017). Visual feature binding in younger and older adults: Encoding and suffix interference effects. *Memory, 25* (2), 261-275. <a href="http://www.tandfonline.com/doi/full/10.1080/09658211.2016.1156705" target="_blank">[link]</a> <a href="files/BrownEtAlMemory.pdf" target="_blank" style="color:teal">(pdf)</a> 
+- Brown, L. A., Niven, E. H., Logie, R. H., Rhodes, S., & Allen, R. J. (2017). Visual feature binding in younger and older adults: Encoding and suffix interference effects. *Memory, 25*(2), 261-275. <a href="http://www.tandfonline.com/doi/full/10.1080/09658211.2016.1156705" target="_blank">[link]</a> <a href="files/BrownEtAlMemory.pdf" target="_blank" style="color:teal">(pdf)</a> 
 
-- Rhodes, S., Parra, M. A., & Logie, R. H. (2016). Ageing and feature binding in visual working memory: The role of presentation time. *The Quarterly Journal of Experimental Psychology, 69* (4), 654-668. 
+- Rhodes, S., Parra, M. A., & Logie, R. H. (2016). Ageing and feature binding in visual working memory: The role of presentation time. *The Quarterly Journal of Experimental Psychology, 69*(4), 654-668. 
 <a href="http://www.tandfonline.com/doi/abs/10.1080/17470218.2015.1038571" target="_blank">[link]</a> <a href="files/RhodesParraLogie2016.pdf" target="_blank" style="color:teal">(pdf)</a> <a href="https://github.com/stephenrho/BindingData/tree/master/RhodesEtAl_QJEP" target="_blank" style="color:firebrick">(data/code)</a>
 
 - Rhodes, S., & Parra, M. A. (2016). *Executive functioning*. Encyclopedia of Geropsychology, Springer. <a href="http://link.springer.com/referencework/10.1007%2F978-981-287-080-3" target="_blank">[link]</a> <a href="files/RhodesAndParra_ExecutiveFunctioning.pdf" target="_blank" style="color:teal">(pdf)</a>
@@ -76,6 +76,8 @@ A more complete CV can be found <a href="files/cv_rhodes.pdf" target="_blank">he
 - Rhodes, S., Cowan, N., Parra, M. A., & Logie, R. H. (*under review*). Binding in short-term visual memory: Reassessing whole display interference. <a href="https://psyarxiv.com/rng4a/" target="_blank" style="color:firebrick">(pre-print)</a>
 
 - Greene, N. R. & Rhodes, S. (*under review*). A tutorial on cognitive modeling for cognitive aging research. <a href="https://psyarxiv.com/qsnea/" target="_blank" style="color:firebrick">(pre-print)</a>
+
+- Rhodes, S., Buchsbaum, B. R., & Hasher, L. (*under review*). The influence of long-term memory on working memory: Age-differences in proactive facilitation and interference. <a href="https://psyarxiv.com/gyjtz/" target="_blank" style="color:firebrick">(pre-print)</a> 
 
 <br></br>
 

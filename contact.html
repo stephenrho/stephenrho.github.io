@@ -13,7 +13,6 @@
 
 <title>Contact</title>
 
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -31,7 +30,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -77,6 +76,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="font.css" type="text/css" />
 
@@ -309,7 +309,6 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-
 <div class="fluid-row" id="header">
 
 
@@ -319,13 +318,8 @@ $(document).ready(function () {
 </div>
 
 
-<p>Stephen Rhodes<br />
-Rotman Research Institute<br />
-Baycrest Health Sciences<br />
-3560 Bathurst Street<br />
-Toronto, ON<br />
-M6A 2E1</p>
-<p>email: <a href="mailto:srhodes@research.baycrest.org" class="email">srhodes@research.baycrest.org</a></p>
+<p>Stephen Rhodes</p>
+<p>email: <a href="mailto:steverho89@gmail.com" class="email">steverho89@gmail.com</a></p>
 <p><a href="https://scholar.google.com/citations?user=VXD5emcAAAAJ&amp;hl=en">Google Scholar</a></p>
 <p><a href="https://www.researchgate.net/profile/Stephen_Rhodes4">Researchgate</a></p>
 <!--
@@ -341,7 +335,7 @@ M6A 2E1</p>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
