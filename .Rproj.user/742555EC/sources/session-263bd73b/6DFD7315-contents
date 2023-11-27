@@ -1,4 +1,5 @@
 name: "stephen-rhodes"
+output_dir: "docs"
 navbar:
   title: "Stephen Rhodes"
   left:
