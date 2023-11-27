@@ -1,0 +1,8 @@
+name: "stephen-rhodes"
+navbar:
+  title: "Stephen Rhodes"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
