@@ -5,5 +5,21 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "CV"
+      href: files/srhodes-cv.pdf
+      
+  right:
+    - icon: ai-google-scholar ai-lg
+      href: https://scholar.google.com/citations?user=VXD5emcAAAAJ&hl=en
+    - icon: fab fa-github fa-lg
+      href: https://github.com/stephenrho
+    - icon: fab fa-twitter fa-lg
+      href: https://twitter.com/stephenrho
+    - icon: fab fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/stephenrho/
+      
+output:
+  html_document:
+    theme: cosmo
+    css: style.css
+

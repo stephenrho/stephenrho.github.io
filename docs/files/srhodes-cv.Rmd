@@ -1,0 +1,102 @@
+---
+name: Stephen
+surname: Rhodes
+position: "Clinical Research Biostatistician III"
+address: "University Hospitals Cleveland Medical Center"
+# www: stephenrho.github.io
+email: "stephen.rhodes@uhhospitals.org"
+twitter: stephenrho
+github: stephenrho
+scholar: VXD5emcAAAAJ&hl
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 414141
+output: 
+  vitae::hyndman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Postdoctoral Fellow", "2019-2021", "Rotman Research Institute", "Toronto ON, CA",
+  "Postdoctoral Fellow", "2016-2019", "University of Missouri", "Columbia MO, USA",
+  "PhD Cognitive Psychology", "2012-2016", "The University of Edinburgh", "Edinburgh, UK",
+  "MSc Human Cognitive Neuropsychology", "2011-2012", "The University of Edinburgh", "Edinburgh, UK",
+  "BSc (hons) Psychology", "2008-2011", "University of Leeds", "Leeds, UK"
+) %>% 
+  detailed_entries(what = Degree, when = Year, with = Institution, where = Where)
+```
+
+# Publications and Preprints
+
+(see https://scholar.google.com/citations?user=VXD5emcAAAAJ&hl=en for pdfs)
+
+```{r publications}
+allpubs = scholar::get_publications("VXD5emcAAAAJ") |>
+  subset(!is.na(year) & !journal %in% c("", "The", "OSF", "The University of Edinburgh", "JOURNAL OF EXPERIMENTAL PSYCHOLOGY-LEARNING MEMORY AND COGNITION") & pubid != "zA6iFVUQeVQC")
+
+# subset(allpubs, select = c("title", "number", "pubid"))
+
+conference = c("M3NEmzRMIkIC", "OU6Ihb5iCvQC", 'SP6oXDckpogC',
+               'UxriW0iASnsC', 'dshw04ExmUIC', 'NhqRSupF_l8C', 
+               'abG-DnoFyZgC', 'b0M2c_1WBrUC', 'EUQCXRtRnyEC',
+               '_xSYboBqXhAC', 'bFI3QPDXJZMC', 'pyW8ca7W8N0C',
+               'D03iK_w7-QYC', 'a0OBvERweLwC', 'yD5IFk8b50cC',
+               'ZHo1McVdvXMC', 'BqipwSGYUEgC', 'ns9cj8rnVeAC',
+               'O3NaXMp0MMsC', "blknAaTinKkC")
+
+conf = subset(allpubs, pubid %in% conference)
+pubs = subset(allpubs, !pubid %in% conference)
+
+pubs %>% 
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title,
+    when = as.numeric(year),
+    with = author,
+    where = journal#,
+    #why = cites
+  )
+
+```
+
+# Published Conference Abstracts
+
+```{r}
+conf %>% 
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title,
+    when = as.numeric(year),
+    with = author,
+    where = journal#,
+    #why = cites
+  )
+
+
+```
+
+```{r}
+# save csv to send updates
+
+pubs = cbind(type = "Publication/Preprint", pubs)
+conf = cbind(type = "Conference Abstract", conf)
+
+pubs = pubs %>% 
+  arrange(desc(year))
+conf = conf %>% 
+  arrange(desc(year))
+
+rbind(pubs[, c("type", "year", "author", "title", "journal", "number")],
+      conf[, c("type", "year", "author", "title", "journal", "number")]) |>
+  write.csv(file = "~/Desktop/rhodes_papers-abstracts.csv", row.names = F, na = "")
+
+```
+

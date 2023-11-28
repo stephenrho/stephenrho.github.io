@@ -3,7 +3,7 @@
     "path": "~/github/website/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "3598733082",
     "contents": "",
     "dirty": false,
     "created": 1700767364980.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "4,10",
+        "cursorPosition": "8,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1701088586,
+    "lastKnownWriteTime": 1701131844,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1701088586261,
+    "last_content_update": 1701131844420,
     "read_only": false,
     "read_only_alternatives": []
 }
