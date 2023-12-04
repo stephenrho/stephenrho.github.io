@@ -9,7 +9,7 @@ navbar:
       href: files/srhodes-cv.pdf
       
   right:
-    - icon: ai-google-scholar ai-lg
+    - icon: fab fa-google fa-lg
       href: https://scholar.google.com/citations?user=VXD5emcAAAAJ&hl=en
     - icon: fab fa-github fa-lg
       href: https://github.com/stephenrho
