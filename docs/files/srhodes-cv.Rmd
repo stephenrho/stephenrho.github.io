@@ -60,7 +60,10 @@ conference = c("M3NEmzRMIkIC", "OU6Ihb5iCvQC", 'SP6oXDckpogC',
                '_xSYboBqXhAC', 'bFI3QPDXJZMC', 'pyW8ca7W8N0C',
                'D03iK_w7-QYC', 'a0OBvERweLwC', 'yD5IFk8b50cC',
                'ZHo1McVdvXMC', 'BqipwSGYUEgC', 'ns9cj8rnVeAC',
-               'O3NaXMp0MMsC', "blknAaTinKkC")
+               'O3NaXMp0MMsC', "blknAaTinKkC", "1qzjygNMrQYC",
+               "V3AGJWp-ZtQC", "kRWSkSYxWN8C", "mvPsJ3kp5DgC",
+               "q3oQSFYPqjQC", "BrmTIyaxlBUC", "eflP2zaiRacC",
+               "fQNAKQ3IYiAC")
 
 conf = subset(allpubs, pubid %in% conference)
 pubs = subset(allpubs, !pubid %in% conference)
