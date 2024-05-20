@@ -63,7 +63,11 @@ conference = c("M3NEmzRMIkIC", "OU6Ihb5iCvQC", 'SP6oXDckpogC',
                'O3NaXMp0MMsC', "blknAaTinKkC", "1qzjygNMrQYC",
                "V3AGJWp-ZtQC", "kRWSkSYxWN8C", "mvPsJ3kp5DgC",
                "q3oQSFYPqjQC", "BrmTIyaxlBUC", "eflP2zaiRacC",
-               "fQNAKQ3IYiAC")
+               "fQNAKQ3IYiAC", "tOudhMTPpwUC", 'Mojj43d5GZwC',
+               'WA5NYHcadZ8C', "wbdj-CoPYUoC", "XiVPGOgt02cC",
+               "XiVPGOgt02cC",
+               allpubs$pubid[grep("^MP|^PD", allpubs$title)]
+               )
 
 conf = subset(allpubs, pubid %in% conference)
 pubs = subset(allpubs, !pubid %in% conference)

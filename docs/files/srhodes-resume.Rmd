@@ -2,11 +2,12 @@
 name: Stephen Rhodes
 position: "Clinical Research Biostatistician III"
 address: "University Hospitals Cleveland Medical Center"
-# www: stephenrho.github.io
+#www: https://stephenrho.github.io/files/srhodes-cv.pdf
 email: "stephen.rhodes@uhhospitals.org"
 github: stephenrho
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 414141
+urlcolor: blue
 output: 
   vitae::awesomecv
 ---
@@ -20,74 +21,53 @@ library(vitae); library(tibble)
 
 # Skills and Expertise
 
-- **R** - used for working with data and analysis for 10+ years. Developed package `pmcalibrate`
-- **python** - Intermediate proficiency
-- **stan** - for Bayesian modeling
-- **SQL** - used for 2 years
-- **Clinical Prediction Modeling** - developing and evaluating diagnostic and prognostic models, following well established guidelines (e.g., TRIPOD)
-- **Large Healthcare Databases** - worked with several large databases from different sources (claims/EHR, insurance, state wide cancer registry)
-
 \begin{cvskills}
 	
 	\cvskill
 	{ R \& R-Studio }
-	{ regularly used packages: brms, lme4, ggplot2, plotly, plyr, knitr, Shiny, rmarkdown }
+	{ used for over 10 years; developed the pmcalibration and pminternal packages}
 	
 	\cvskill	
 	{ Python }
 	{ regularly used packages: numpy, pandas, scipy, psychopy, sklearn}
 	
 	\cvskill
-	{ Other Languages }
-	{ SLURM; SQL; Matlab/ octave (occasional use)}
-	
-	\cvskill
-	{ Bayesian Modeling }
-	{ using the Just Another Gibbs Sampler (JAGS) and Stan programming languages}
+	{ Other Programming Languages }
+	{ SLURM (for high performance computing); SQL (for databases); Stan (for Bayesian Modeling)}
 	
 	\cvskill
 	{ Communication }
-	{ to both technical and non-technical audiences }
+	{ both written and spoken to both technical and non-technical audiences }
 	
-	%---------------------------------------------------------
-	%\cvskill
-	%{R \& R-Studio}
-	%{highly proficient (over 7 years). Regularly used packages: brms, lme4, ggplot2, plotly, plyr}
+	\cvskill
+	{ Clincial Research }
+	{ clinical trial design and estimands; analysis of large healthcare databases; \newline
+	causal inference with observational data (potential outcomes framework, DAGs)}
 	
-	%---------------------------------------------------------
-	%\cvskill
-	%{Python} 
-	%{highly proficient (over 5 years). Regularly used packages: numpy, pandas, scipy, psychopy} 
-	
-	%---------------------------------------------------------
-	%\cvskill
-	%{Bayesian Modeling} 
-	%{with JAGS and Stan - proficient (over 3 years)} 
-	
-	%---------------------------------------------------------
-	%\cvskill
-	%{Matlab/ octave} 
-	%{beginner (1 year)} 
-	
-	%---------------------------------------------------------
-	%\cvskill
-	%{SQL} 
-	%{beginner (3 months)} 
-	
-	%---------------------------------------------------------
 \end{cvskills}
-
 
 # Experience
 
 ```{r}
 exp = tribble(
   ~ role, ~ years, ~ instit, ~ city, ~ details,
-  "Clinical Research Biostatistician III", "2021-present", "University Hospitals, Urology Institute", "Cleveland OH, USA", c("Worked with many large scale healthcare databases (premier, OCISS, marketscan, trinetx, allofus)", "Developed clinical prediction models", "Causal inference \\href{test}{www.test.com}"),
+  "Clinical Research Biostatistician III", "2022-present", "University Hospitals, Cleveland Medical Center", "Cleveland OH, USA", 
+  c("Devised analysis plan and assisted with the design of several ongoing randomized trials as well as large grant applications (e.g., a PCORI grant submitted Jan 2024)",
+    "Used several large administrative databases (Premier healthcare database, Marketscan, allofus, ICES (Ontario health records)) to create cohorts and perform analyses. This work has resulted in several articles in high impact journals, for example on aderance to antibiotic guidelines around surgery (see \\href{https://stephenrho.github.io/files/srhodes-cv.pdf}{CV} for full list)", 
+    "Developed and evaluated prediction models for \\href{https://stephenrho.shinyapps.io/opioid-app/}{opioid use} and surgical site infection following pelvic surgery. I have written two R packages that implement key parts of prediction model validation for a range of model types",
+    "Automated the extraction of publication records for analysis of publishing trends in Urology, with a particular focus on the representation of female urologists. Initial results published in \\href{https://www.sciencedirect.com/science/article/pii/S0302283820308812?via\\%3Dihub}{European Urology} and \\href{https://www.sciencedirect.com/science/article/pii/S2405456921003114}{European Urology Focus}"),
   
-  "Postdoctoral Fellow", "2019-2021", "Baycrest Hospital, Rotman Research Institute (University of Toronto)", "Toronto ON, CA", c(),
+  "Postdoctoral Fellow", "2019-2021", "Baycrest Hospital, Rotman Research Institute (University of Toronto)", "Toronto ON, CA", 
+  c("Conducted experiments on the role of interference in older adults' short term memory (published in \\href{https://link.springer.com/article/10.3758/s13423-021-01981-2}{Psychonomic Bulletin \\& Review})",
+      	"Developed a project using functional magnetic resonance imaging to decode currently active neural representations in short-term memory (shelved due to Covid-19)",
+		"Used neural network image classification models to measure image similarity for testing against human perception and memory",
+		"Developed and led a workshop on Bayesian data analysis \\href{https://github.com/stephenrho/bayes-workshop}{(materials here)}. This workshop was given at the Rotman Institute in October 2019 and at the Case Western Reserve University School of Applied Social Sciences in February 2020"),
   
-  "Postdoctoral Fellow", "2016-2019", "University of Missouri, Dept. of Psychological Sciences", "Columbia MO, USA", c(),
+  "Postdoctoral Fellow", "2016-2019", "University of Missouri, Dept. of Psychological Sciences", "Columbia MO, USA", c("Part of a collaboration on aging and memory between groups in the US, UK, and Switzerland (\\url{http://womaac.psy.ed.ac.uk/})",
+      	"Led the development of analysis pipelines that addressed the hypotheses of interest to our collaborators (\\href{https://osf.io/72j4m/}{example here}) and performed analyses of experimental data using generalized linear mixed effects models",
+      	"Developed a protocol for data documentation and archiving to ensure that results were reproducible by others. The data and analysis code from this project are archived and publicly available on the open science framework (\\url{http://osf.io/3wnu2})",
+      	"Led two projects synthesizing findings in the literature on memory and aging. Used meta-analytic models to provide new insights into long-standing research questions. Published in \\href{https://psycnet.apa.org/fulltext/2019-24512-001.html}{Psychology \\& Aging} and \\href{https://link.springer.com/article/10.3758/s13423-019-01649-y}{Psychonomic Bulletin \\& Review}",
+      	"Co-developed and led a two day workshop on the statistical modeling using maximum likelihood and Bayesian estimation techniques \\href{https://github.com/stephenrho/CognitiveModelingWorkshop}{(materials here)}"),
   
 )
 
