@@ -1,0 +1,14 @@
+---
+title: "About"
+---
+
+I am a Clinical Research Biostatistician at University Hospitals Cleveland Medical Center. I support clinical research in urology and female pelvic medicine and reconstructive surgery. My research interests are in the development and validation of clinical prediction models.
+
+\
+\
+
+# R packages
+
+- [pminternal](https://stephenrho.github.io/pminternal/): Internal Validation of Clinical Prediction Models
+- [pmcalibration](https://stephenrho.github.io/pmcalibration): Calibration Curves for Clinical Prediction Models ([CRAN](https://CRAN.R-project.org/package=pmcalibration))
+

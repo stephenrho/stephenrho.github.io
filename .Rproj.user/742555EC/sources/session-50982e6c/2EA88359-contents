@@ -1,0 +1,126 @@
+---
+name: Stephen
+surname: Rhodes
+position: "Clinical Research Biostatistician III"
+address: | 
+  St. Louis, MO
+www: stephenrho.github.io
+email: "stephen.rhodes@uhhospitals.org"
+github: stephenrho
+scholar: VXD5emcAAAAJ&hl
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 414141
+output: 
+  vitae::hyndman
+---
+
+<!-- Lakeside Suite 4554, 11100 Euclid Avenue, Cleveland, OH 44106 -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+```
+
+# Experience
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Clinical Research Biostatistician III", "2021-present", "Urology Institute, University Hospitals Cleveland Medical Center", "Cleveland OH, USA (remote)",
+  "Postdoctoral Fellow", "2019-2021", "Rotman Research Institute", "Toronto ON, CA",
+  "Postdoctoral Fellow", "2016-2019", "University of Missouri", "Columbia MO, USA"
+) %>% 
+  detailed_entries(what = Degree, when = Year, with = Institution, where = Where)
+```
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "PhD Cognitive Psychology", "2012-2016", "The University of Edinburgh", "Edinburgh, UK",
+  "MSc Human Cognitive Neuropsychology", "2011-2012", "The University of Edinburgh", "Edinburgh, UK",
+  "BSc (hons) Psychology", "2008-2011", "University of Leeds", "Leeds, UK"
+) %>% 
+  detailed_entries(what = Degree, when = Year, with = Institution, where = Where)
+```
+
+# Publications and Preprints
+
+<!-- (see https://scholar.google.com/citations?user=VXD5emcAAAAJ&hl=en for pdfs) -->
+
+```{r publications}
+allpubs = scholar::get_publications("VXD5emcAAAAJ") |>
+  subset(!is.na(year) & !journal %in% c("", "The", "OSF", "The University of Edinburgh", "JOURNAL OF EXPERIMENTAL PSYCHOLOGY-LEARNING MEMORY AND COGNITION") & !(pubid %in% c("zA6iFVUQeVQC", "K3LRdlH-MEoC")))
+
+# subset(allpubs, select = c("title", "number", "pubid"))
+
+conference = c("M3NEmzRMIkIC", "OU6Ihb5iCvQC", 'SP6oXDckpogC',
+               'UxriW0iASnsC', 'dshw04ExmUIC', 'NhqRSupF_l8C', 
+               'abG-DnoFyZgC', 'b0M2c_1WBrUC', 'EUQCXRtRnyEC',
+               '_xSYboBqXhAC', 'bFI3QPDXJZMC', 'pyW8ca7W8N0C',
+               'D03iK_w7-QYC', 'a0OBvERweLwC', 'yD5IFk8b50cC',
+               'ZHo1McVdvXMC', 'BqipwSGYUEgC', 'ns9cj8rnVeAC',
+               'O3NaXMp0MMsC', "blknAaTinKkC", "1qzjygNMrQYC",
+               "V3AGJWp-ZtQC", "kRWSkSYxWN8C", "mvPsJ3kp5DgC",
+               "q3oQSFYPqjQC", "BrmTIyaxlBUC", "eflP2zaiRacC",
+               "fQNAKQ3IYiAC", "tOudhMTPpwUC", 'Mojj43d5GZwC',
+               'WA5NYHcadZ8C', "wbdj-CoPYUoC", "XiVPGOgt02cC",
+               "XiVPGOgt02cC", "_Ybze24A_UAC", "1qzjygNMrQYC",
+               "7T2F9Uy0os0C",
+               allpubs$pubid[grep("^MP|^PD|^\\(", allpubs$title)]
+               )
+
+allpubs$journal = gsub("\\, S$", "", allpubs$journal)
+
+conf = subset(allpubs, pubid %in% conference)
+pubs = subset(allpubs, !pubid %in% conference)
+
+pubs %>% 
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title,
+    when = as.numeric(year),
+    with = author,
+    where = journal#,
+    #why = cites
+  )
+
+```
+
+# Published Conference Abstracts
+
+```{r}
+conf %>% 
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title,
+    when = as.numeric(year),
+    with = author,
+    where = journal#,
+    #why = cites
+  )
+```
+
+```{r}
+# save csv to send updates
+
+pubs = cbind(type = "Publication/Preprint", pubs)
+conf = cbind(type = "Conference Abstract", conf)
+
+pubs = pubs %>% 
+  arrange(desc(year))
+conf = conf %>% 
+  arrange(desc(year))
+
+rbind(pubs[, c("type", "year", "author", "title", "journal", "number")],
+      conf[, c("type", "year", "author", "title", "journal", "number")]) |>
+  write.csv(file = "~/Desktop/rhodes_papers-abstracts.csv", row.names = F, na = "")
+
+```
+
+# R packages
+
+- **pminternal**: Internal Validation of Clinical Prediction Models. https://stephenrho.github.io/pminternal/ 
+- **pmcalibration**: Calibration Curves for Clinical Prediction Models. https://github.com/stephenrho/pmcalibration; https://CRAN.R-project.org/package=pmcalibration
