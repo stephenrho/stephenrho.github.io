@@ -5,8 +5,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "CV"
-      href: files/srhodes-cv.pdf
+    # - text: "CV"
+    #   href: files/srhodes-cv.pdf
       
   right:
     - icon: fab fa-google fa-lg
