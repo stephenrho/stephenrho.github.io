@@ -9,6 +9,6 @@ I am a Clinical Research Biostatistician at University Hospitals Cleveland Medic
 
 # R packages
 
-- [pminternal](https://stephenrho.github.io/pminternal/): Internal Validation of Clinical Prediction Models
+- [pminternal](https://stephenrho.github.io/pminternal/): Internal Validation of Clinical Prediction Models ([CRAN](https://CRAN.R-project.org/package=pminternal))
 - [pmcalibration](https://stephenrho.github.io/pmcalibration): Calibration Curves for Clinical Prediction Models ([CRAN](https://CRAN.R-project.org/package=pmcalibration))
 
