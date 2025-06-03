@@ -1,0 +1,613 @@
+---
+title: "Testosterone pricing"
+author: "stephen.rhodes@uhhospitals.org"
+date: "Last updated: `r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+urlcolor: blue
+toc: false
+---
+
+```{r setup, include=FALSE}
+
+# Data can be obtained from https://turquoise.health/researchers
+# Please send questions to stephen.rhodes@uhhospitals.org
+
+rm(list=ls())
+
+knitr::opts_chunk$set(echo = F, warning = F, message = F, cache=F)
+
+library(data.table)
+library(ggplot2)
+library(atable)
+library(sf)
+library(tidycensus)
+library(sociome)
+library(gtsummary)
+library(kableExtra)
+library(plyr)
+options(knitr.kable.NA = '')
+
+## read in provider info
+provs = fread("providers-2022-10-18.csv")
+
+sum(is.na(provs$location))
+sum(provs$location == "")
+
+provs$location[provs$location == "" ] = NA
+
+provs2 = sf::st_as_sf(x = subset(provs, !is.na(location)), wkt = "location")
+
+provs$location = NULL
+
+provs = merge(provs, as.data.frame(provs2[, c("prov_id", "location")]), by = "prov_id", 
+              all.x = T)
+
+provs$location = st_set_crs(provs$location, value = 4326)
+
+rm(provs2)
+
+provs = subset(provs, !is.na(provides_price_estimates) & provider_name != "Example Provider")
+
+names(state.region) = state.abb
+
+provs[, region:= state.region[provs$provider_state] ]
+
+set(provs, which(provs$provider_state=="DC"), j = "region", "Northeast")
+set(provs, which(provs$provider_state=="Illinois"), j = "region", "North Central")
+set(provs, which(provs$provider_state=="ca"), j = "region", "West")
+set(provs, which(provs$provider_state %in% c("Puerto Rico", "PR")), j = "region", "Puerto Rico")
+
+table(provs$region, useNA = "ifany")
+
+provs = subset(provs, !is.na(region))
+
+# add HSA and HRR from https://data.dartmouthatlas.org/supplemental/
+
+hsarr = fread("data/ZipHsaHrr19.csv")
+
+hsarr$zipcode19 = gsub(" ", "0", format(hsarr$zipcode19, digits = 5)) # same format as prov data
+
+provs$provider_zip = gsub("\\-.*", "", provs$provider_zip) # reduce to 5 digit zip
+
+sum(provs$provider_zip %in% hsarr$zipcode19)
+subset(provs, !provider_zip  %in% hsarr$zipcode19)
+
+provs = merge(provs, hsarr[, mget(c("zipcode19", "hsanum", "hrrnum"))], by.x = "provider_zip", by.y = "zipcode19", all.x = T)
+
+# add number of hospitals in HSA as proxy for competition
+provs = merge(provs, provs[, list(N_in_HSA = .N), by="hsanum"], by="hsanum", all.x = T)
+
+# categorize providers as urban or rural using data (shapefiles) from
+# https://catalog.data.gov/dataset/tiger-line-shapefile-2017-2010-nation-u-s-2010-census-urban-area-national
+
+urbrur = read_sf("data/tl_2017_us_uac10/tl_2017_us_uac10.shp")
+
+urbrur = st_transform(urbrur, crs = 4326)
+
+provs$urbrur = apply(st_intersects(urbrur$geometry, provs$location, sparse = F), 2, 
+                     function(col) { 
+                       if (!all(!col)){
+                         urbrur[which(col), ]$UATYP10
+                       } else{
+                         NA
+                       }
+                     })
+
+table(provs$urbrur, useNA = "if")
+
+provs$urban_rural = ifelse(is.na(provs$urbrur), "Rural", "Urban")
+
+counties = tigris::counties()
+counties = st_transform(counties, crs = 4326)
+
+provs$county_fips = apply(st_intersects(counties$geometry, provs$location, sparse = F), 2, 
+                          function(col) { 
+                            if (!all(!col)){
+                              counties[which(col), ]$GEOID
+                            } else{
+                              NA
+                            }
+                          })
+
+
+#plot(urbrur$geometry[1:100])
+
+# get some info from the ACS
+
+# fields = c(
+#   median_age = "B01002_001", # median age total
+#   total_pop = "B01003_001", # total population
+#   median_income = "B06011_001",
+#   female = "B01001_026", # sex = female
+#   male = "B01001_002", # sex = male
+#   white = "B02001_002", # white alone
+#   black = "B02001_003", # black or AA alone
+#   asian = "B02001_005", # asian
+#   hispanic = "B03003_003" # hispanic
+# )
+# 
+# acs19 = get_acs(geography = "county", variables = fields, year = 2019)
+
+adi = get_adi("county", dataset = "acs5", year = 2020, keep_indicators = T)
+
+colnames(adi)
+
+adi = adi[, 1:21]
+
+mean(provs$county_fips %in% adi$GEOID)
+
+provs = merge(provs, adi, by.x = 'county_fips', by.y = 'GEOID', all.x = T)
+
+## rates
+files = list.files(pattern = "query-2022-10-07.csv|query-2022-10-07_")
+
+dat = rbindlist(lapply(files, fread))
+
+n_outliers = sum(dat$rate_is_outlier)
+
+dat = subset(dat, !rate_is_outlier & rate > 5)
+
+table(dat$payer_class, useNA = "ifany")
+
+# n_omit_class = nrow(subset(dat, !payer_class %in% c("Commercial", "Medicaid", "Medicare", "Self-Pay", "Veterans Affairs", "Workers' Compensation")))
+# 
+# dat = subset(dat, payer_class %in% c("Commercial", "Medicaid", "Medicare", "Self-Pay", "Veterans Affairs", "Workers' Compensation"))
+
+n_omit_class = nrow(subset(dat, !payer_class %in% c("Commercial", "Self-Pay")))
+
+dat = subset(dat, payer_class %in% c("Commercial", "Self-Pay"))
+
+length(unique(dat$provider_id))
+
+# group ownership
+set(dat, which(grepl("Voluntary|Government", dat$hospital_ownership)), j = "owner", value = "Non-profit")
+set(dat, which(grepl("Proprietary|Physician", dat$hospital_ownership)), j = "owner", value = "Private")
+set(dat, which(is.na(dat$owner)), j = "owner", value = "Other/Unknown")
+
+dat$owner = factor(dat$owner, levels = c("Non-profit", "Private", "Other/Unknown"))
+
+table(dat$owner, useNA = "ifany")
+
+set(provs, which(grepl("Voluntary|Government|Defense", provs$hospital_ownership)), j = "owner", value = "Non-profit")
+set(provs, which(grepl("Proprietary|Physician", provs$hospital_ownership)), j = "owner", value = "Private")
+set(provs, which(is.na(provs$owner)), j = "owner", value = "Other/Unknown")
+
+provs$owner = factor(provs$owner, levels = c("Non-profit", "Private", "Other/Unknown"))
+
+table(provs$owner, useNA = "ifany")
+
+#dat = subset(dat, payer_class == "Self-Pay")
+
+# keep the main commercial insurers
+#Aetna, Blue Cross Blue Shield, Cigna, and UnitedHealthcare
+
+commercial_keep = c('United Healthcare', "Blue Cross Blue Shield", 'Aetna', 'Cigna', 'Anthem')
+
+pn = table(dat$payer_name)
+pn[order(pn, decreasing = T)]
+table(dat$payer_name[dat$payer_class == "Self-Pay"])
+
+dat = subset(dat, payer_name %in% c(commercial_keep, "Cash Price"))
+
+# merge some select columns from provs
+dat = merge(dat, provs[, c("prov_id", "location", "region", "N_in_HSA", "urban_rural", "ADI", "medianFamilyIncome", "pctPeopleLivingBelow150PctFederalPovertyLevel")], by.x = "provider_id", by.y = "prov_id", 
+            all.x = T)
+
+## create some vars...
+set(dat, which(dat$total_beds <= 100), j = "beds", value = "0-100")
+set(dat, which(dat$total_beds > 100 & dat$total_beds <= 500), j = "beds", value = "101-500")
+set(dat, which(dat$total_beds > 500 & dat$total_beds <= 500), j = "beds", value = "501-1000")
+set(dat, which(dat$total_beds > 500 & dat$total_beds <= 1000), j = "beds", value = "501-1000")
+set(dat, which(dat$total_beds > 1000), j = "beds", value = "1001+")
+set(dat, which(is.na(dat$total_beds)), j = "beds", value = "Unknown")
+
+dat$beds = factor(dat$beds, levels = c("0-100", "101-500", "501-1000", "1001+", "Unknown"))
+
+table(dat$beds, useNA = 'if')
+
+set(dat, which(dat$N_in_HSA == 1), j = "n_in_HSA", value = "1")
+set(dat, which(dat$N_in_HSA >= 2 & dat$N_in_HSA <= 10), j = "n_in_HSA", value = "2-10")
+set(dat, which(dat$N_in_HSA > 10), j = "n_in_HSA", value = "11+")
+set(dat, which(is.na(dat$N_in_HSA) ), j = "n_in_HSA", value = "Unknown")
+
+dat$n_in_HSA = factor(dat$n_in_HSA, levels = c("1", "2-10", "11+", "Unknown"))
+
+table(dat$n_in_HSA, useNA = 'if')
+
+med_rate = dat[, list(med_rate = median(rate), min_rate=min(rate), max_rate=max(rate), rate_ratio = max(rate)/min(rate), mean_rate = mean(rate), sd_rate=sd(rate), N_rates=length(rate)), by = c("cpt", "provider_id", "payer_class")]
+
+mdat = merge(dat[!duplicated(paste(dat$cpt, dat$provider_id, dat$payer_class)), ], med_rate, by=c("cpt", "provider_id", "payer_class"))
+
+unique(grep("surgical center|surgery center", mdat$provider_name, ignore.case = T, value = T))
+
+procedures = list("Vasectomy"=55250, "Vasovasostomy"=55400, 
+                  "Epididymovasostomy, unilateral"=54900,
+                  "Epididymovasostomy, bilateral"=54901,
+                  
+                  "Insertion of non-IPP"=54400,
+                  "Insertion of IPP"=54401,
+                  "Insertion of multi-component IPP"=54405,
+                  
+                  "Total Testosterone"=84402,
+                  "Free Testosterone"=84403
+)
+
+for (n in names(procedures)){
+  set(mdat, i = which(mdat$cpt == procedures[[n]]), j = "Procedure", 
+      value = paste0(procedures[[n]], ": ", n))
+}
+
+table(mdat$Procedure, useNA = "ifany")
+
+# what proportion of providers report rates?
+for (n in names(procedures)){
+  provs[, paste0(n) := provs$prov_id %in% mdat$provider_id[mdat$cpt == procedures[[n]]]]
+  provs[, paste0(n, "_self") := provs$prov_id %in% mdat$provider_id[mdat$cpt == procedures[[n]] & mdat$payer_class == "Self-Pay"]]
+  provs[, paste0(n, "_comm") := provs$prov_id %in% mdat$provider_id[mdat$cpt == procedures[[n]] & mdat$payer_class == "Commercial"]]
+}
+
+apply(provs[, mget(names(procedures))], 2, mean)
+apply(provs[, mget(names(procedures))], 1, sum)
+
+apply(provs[, mget(paste0(names(procedures), "_self"))], 2, mean)
+apply(provs[, mget(paste0(names(procedures), "_self"))], 1, sum)
+
+apply(provs[, mget(paste0(names(procedures), "_comm"))], 2, mean)
+apply(provs[, mget(paste0(names(procedures), "_comm"))], 1, sum)
+
+# split
+# vas = subset(mdat, cpt %in% c(55250, 55400, 54900, 54901))
+# ipp = subset(mdat, cpt %in% c(54400, 54401, 54405))
+tes = subset(mdat, cpt %in% c(84402, 84403))
+
+rm(mdat)
+
+provs[, vas_rate := ifelse(apply(provs[, mget(names(procedures)[1:4])], 1, any), "Yes", "No")]
+provs[, ipp_rate := ifelse(apply(provs[, mget(names(procedures)[5:7])], 1, any), "Yes", "No")]
+provs[, tes_rate := ifelse(apply(provs[, mget(names(procedures)[8:9])], 1, any), "Yes", "No")]
+
+set(provs, which(provs$hospital_type==""), "hospital_type", NA)
+
+```
+
+# Data and Analysis
+
+Only rates with a payer_class of "Commercial" and "Self-Pay" were retained. Further, only the following top 5 commercial payers were retained.
+
+```{r, results="asis"}
+
+cat("", commercial_keep, sep = "\n - ")
+
+```
+
+hospital_ownership was used to categorize hospitals as private or public. The different values of hospital_ownership are shown below:
+
+```{r}
+unique(dat$hospital_ownership)
+```
+
+Those with 'non-profit' or 'Government' in the title were grouped under "Non-profit". Those with 'Proprietary' in the title and 'Physician' were grouped into "Private". The remaining categories were grouped into "Other/Unknown".
+
+Hospital service area (HSA) was identified via zip code using the crosswalk tables provided at https://data.dartmouthatlas.org/supplemental/. The number of hospitals from turquoise within a HSA was used as a proxy for competition.
+
+Urban vs rural location was determined via the 2010 census urban areas shape files available at
+https://catalog.data.gov/dataset/tiger-line-shapefile-2017-2010-nation-u-s-2010-census-urban-area-national. If the hospital location fell within the boundary of an 'urbanized area' or 'urban cluster' it was considered an urban hospital, otherwise it was considered rural. 
+
+Median household income and the percentage of people living 150% below the poverty line were extracted for the hospital county from the 2016-2020 5-year American Communities Survey (https://www.census.gov/programs-surveys/acs) using the sociome package for R. Area deprivation index (ADI; which includes the two previous measures) was also calculated at the county level (https://www.neighborhoodatlas.medicine.wisc.edu/). The ADI is calculated so that an average county has a score of 100 and higher values indicate greater deprivation.
+
+## Analysis
+
+As prices are very skewed (they have a non-normal distribution with a long tail at higher prices) we log transformed price for analysis, which improves the distribution of price and allows us to better approximate the assumptions of linear regression. Transformed rates were analyzed via linear regression with the following predictors: (1) number of hospitals in the hospital service area (1, 2-10, or 11+), (2) urban/rural location, (3) number of beds (0-100, 101-500, 501-1000, 1001+), (4) ADI (standardized so that the beta is the change in log cost per SD increase in ADI), and (5) ownership (non-profit, private, other).
+
+The results are presented in tables. In the tables, rows without a beta estimate are the referent (i.e. the other betas for that variable are relative to that group). While the beta coefficients are in log price terms, we can still interpret the direction of the betas and the p values. It is possible to convert things back to the dollar scale but we can do that for a paper.
+
+Separate analyses were conducted for each code and for payer type (cash, commercial) as there are some hospitals that only report some but not others.
+
+# Testosterone
+
+Of the `r nrow(provs)` hospitals that contribute rates to turquoise, `r sum(apply(provs[, mget(names(procedures)[8:9])], 1, any))` (`r round(mean(apply(provs[, mget(names(procedures)[8:9])], 1, any))*100, 2)`%) report at least one rate for at least one of the testosterone codes. The table below presents the percentage of hospitals reporting at least one rate for each of the prosthesis related codes.
+
+```{r}
+round(apply(provs[, mget(names(procedures)[8:9])], 2, mean)*100, 2)
+```
+
+Below shows the percentage reporting self pay (cash) rates.
+
+```{r}
+round(apply(provs[, mget(paste0(names(procedures)[8:9], "_self"))], 2, mean)*100, 2)
+```
+
+And the percentage reporting commercial rates.
+
+```{r}
+round(apply(provs[, mget(paste0(names(procedures)[8:9], "_comm"))], 2, mean)*100, 2)
+```
+
+The table below compares some characteristics between hospitals that do and do not provide a rate. 
+
+As above, hospitals that report a rate tend to have more information available overall (see 'missing' rows), a higher 'compliance score', and tend to be larger (more beds and MDs).
+
+```{r}
+medIQR = function(x){
+  q = unname(quantile(x, probs = c(.25, .5, .75), na.rm=T))
+  list("Mean (SD)" = sprintf("%.1f (%.1f)", mean(x, na.rm = T), sd(x, na.rm = T)),
+       "Median (IQR)" = sprintf("%.1f (%.1f, %.1f)", q[2], q[1], q[3]),
+       "missing" = sum(is.na(x)))
+}
+
+table_vars = c('total_beds', 'total_mds', 'maj_inv_owned', 'owner', 'hospital_type', 'region', "compliance_score", 'N_in_HSA', 'urban_rural', 'medianFamilyIncome', 'pctPeopleLivingBelow150PctFederalPovertyLevel', "ADI")
+
+tab = atable(x = provs[, mget(c(table_vars, 'tes_rate'))], 
+             target_cols = table_vars, 
+             group_col = "tes_rate",
+             format_to = "markdown", statistics.numeric=medIQR)
+tab[is.na(tab)] = ""
+tab = tab[,1:4]
+
+kable(tab, caption = "Comparison of hospitals that provide a rate for testosterone vs those that do not", format = "markdown")
+
+tab$Group = gsub("&nbsp;", "", tab$Group)
+
+write.csv(tab, file = "test-tables-2025/test-rate-vs-none.csv", row.names = F)
+```
+
+The table below gives the results of a multivariable logistic regression assessing odds of providing at least one rate vs not. 
+
+```{r}
+
+set(provs, which(provs$total_beds <= 100), j = "beds", value = "0-100")
+set(provs, which(provs$total_beds > 100 & provs$total_beds <= 500), j = "beds", value = "101-500")
+set(provs, which(provs$total_beds > 500 & provs$total_beds <= 500), j = "beds", value = "501-1000")
+set(provs, which(provs$total_beds > 500 & provs$total_beds <= 1000), j = "beds", value = "501-1000")
+set(provs, which(provs$total_beds > 1000), j = "beds", value = "1001+")
+set(provs, which(is.na(provs$total_beds)), j = "beds", value = "Unknown")
+
+provs$beds = factor(provs$beds, levels = c("0-100", "101-500", "501-1000", "1001+", "Unknown"))
+
+
+set(provs, which(provs$N_in_HSA == 1), j = "n_in_HSA", value = "1")
+set(provs, which(provs$N_in_HSA >= 2 & provs$N_in_HSA <= 10), j = "n_in_HSA", value = "2-10")
+set(provs, which(provs$N_in_HSA > 10), j = "n_in_HSA", value = "11+")
+set(provs, which(is.na(provs$N_in_HSA) ), j = "n_in_HSA", value = "Unknown")
+
+provs$n_in_HSA = factor(provs$n_in_HSA, levels = c("1", "2-10", "11+", "Unknown"))
+
+lr = glm(I(tes_rate == "Yes") ~ n_in_HSA + urban_rural + beds + scale(ADI) + owner, family = "binomial", data = provs)
+
+tbl_regression(lr, exponentiate = T)
+
+lr |> 
+  tbl_regression( exponentiate = T) |>
+  as_tibble() |> 
+  write.csv("test-tables-2025/odds-ratios.csv", na = "")
+
+```
+
+
+The plot below shows the distribution of prices by payer class and hospital ownership (`tes-median-iqr.csv`). 
+
+```{r, fig.height=6, fig.width=6}
+
+ggplot(tes, aes(x = payer_class, y = med_rate, color = owner)) + 
+  geom_boxplot(position = position_dodge(.7)) +
+  scale_y_continuous(trans="log10", labels = scales::dollar) + #coord_flip() + 
+  facet_wrap(~ Procedure, ncol = 1) + theme_bw() + theme(axis.text.x = element_text(hjust = 1, angle = 45), legend.position = "top") + 
+  labs(title="", x="Payer Class", y="Price", color="Ownership")
+
+ddply(tes, c("Procedure", "payer_class", "owner"), summarise,
+      median = median(med_rate),
+      IQR_lower = quantile(med_rate, .25),
+      IQR_upper = quantile(med_rate, .75)
+) |>
+  write.csv("test-tables-2025/tes-median-iqr.csv", row.names = F)
+
+
+```
+
+The next plot focuses on the Self-Pay payer class, which is the cash price, as a function of ownership (`tes-mean-CI.csv`).
+
+```{r, fig.height=6, fig.width=6}
+p=ggplot(tes, aes(x = payer_class, y = med_rate, color=owner)) +
+  #geom_point(alpha=1/3) + 
+  #geom_violin() + 
+  stat_summary(fun="mean", geom = "point", position=position_dodge(.4)) + 
+  #stat_summary(fun="median", geom = "point", col="red") +
+  stat_summary(fun.data = "mean_cl_boot", geom="errorbar", width=.2, position=position_dodge(.4)) +
+  facet_wrap(~ Procedure, ncol = 1) +
+  scale_y_continuous(trans="log10", labels = scales::dollar) + #coord_flip() + 
+  theme_bw() + #theme(axis.text.x = element_text(hjust = 1, angle = 45)) + 
+  labs(title=NULL, x="", y="Price", caption = "Mean and bootstrapped 95% confidence intervals")
+p
+
+x = ggplot_build(p)$data[[2]]
+
+x$payer_class = ifelse(x$group %in% 1:3, "Commercial", "Self-Pay")
+
+x$owner = sapply(x$group, \(xx){
+  if(xx %in% c(1,4)){
+    "Non-profit"
+  } else if (xx %in% c(2,5)){
+    "Private"
+  } else{
+    "Other/Unknown"
+  }
+})
+
+x$mean = 10^x$y
+x$CI_lower = 10^x$ymin
+x$CI_upper = 10^x$ymax
+
+levels(x$PANEL) = unique(tes$Procedure)
+
+x$Procedure = x$PANEL
+
+x[, c("Procedure", "payer_class", "owner", "mean", "CI_lower", "CI_upper")] |>
+  write.csv("test-tables-2025/tes-mean-CI.csv")
+
+```
+
+The plots below show between state variability in the number of rates available (TX provides the most) and in the average rate. For average rate there is less variability but CA is clearly the cheapest for total testosterone. We have the exact address of each hospital so can dig into more precise location information if this is of interest.
+
+```{r, fig.height=7*1.5, fig.width=5*1.5}
+library(tigris)
+library(gridExtra)
+
+options(tigris_use_cache = TRUE)
+
+sts = states(cb = T) |> shift_geometry()
+
+#tes_loc = merge(tes, sts, by.x = "provider_state", by.y = "STUSPS", all.x=T)
+
+tes_loc = subset(tes, payer_class == "Self-Pay")
+tes_loc = tes
+
+tes_N = tes_loc[, .N, by=c("Procedure", "payer_class", "provider_state")]
+tes_N = merge(tes_N, sts, by.x = "provider_state", by.y = "STUSPS", all.x=T)
+
+#ggplot(subset(tes_N, Procedure=="84403: Free Testosterone"), 
+ggplot(tes_N, 
+       aes(geometry = geometry, fill=N)) +
+  geom_sf(color="black", lwd=0.05) + 
+  #geom_sf(lwd=0) +
+  #coord_sf(datum = NA) +
+  facet_grid(payer_class~Procedure) +
+  theme(legend.position="bottom",
+        legend.key.size = unit(.06, units = "npc"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank(),
+        axis.title=element_blank(),
+        panel.background=element_blank(),
+        panel.border=element_blank(),
+        panel.grid=element_blank(),
+        strip.background = element_rect(fill = "white")) +
+  scale_fill_gradientn(colours = viridis::viridis(n = 100, direction = -1), 
+                       breaks=seq(4, 273, 60)) +
+  labs(fill = "N", title="Number of Prices", caption = "tes-state-number.csv")
+
+
+# tes_N[, c("provider_state", "Procedure", "payer_class", "N")] |>
+#   write.csv("test-tables-2025/tes-state-number.csv")
+
+```
+
+
+```{r, fig.height=7*1.5, fig.width=5*1.5}
+
+tes_mean = tes_loc[, list(N = .N, av = mean(med_rate), eav = exp(mean(log(med_rate))), med = median(med_rate), iqr_lower = quantile(med_rate, .25), iqr_upper = quantile(med_rate, .25)), by=c("Procedure", "payer_class", "provider_state")]
+
+tes_mean = merge(tes_mean, sts, by.x = "provider_state", by.y = "STUSPS", all.x=T)
+
+#ggplot(subset(tes_N, Procedure=="84403: Free Testosterone"), 
+ggplot(tes_mean, 
+       aes(geometry = geometry, fill=med)) +
+  geom_sf(color="black", lwd=0.05) + 
+  #geom_sf(lwd=0) +
+  #coord_sf(datum = NA) +
+  facet_grid(payer_class~Procedure) +
+  theme(legend.position="bottom",
+        legend.key.size = unit(.06, units = "npc"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks=element_blank(),
+        axis.title=element_blank(),
+        panel.background=element_blank(),
+        panel.border=element_blank(),
+        panel.grid=element_blank(),
+        strip.background = element_rect(fill = "white")) +
+  scale_fill_gradientn(colours = viridis::viridis(n = 100, direction = -1), 
+                       breaks=seq(30, 150, 30)) +
+  labs(fill = "Price ($)", title="Median Price by State")
+
+ggsave(filename = "test-tables-2025/median-by-state.pdf", height=7*1.5, width=5*1.5)
+
+setorder(tes_mean, -med)
+tes_mean[, c("provider_state", "Procedure", "payer_class", "N", "eav", "med", "iqr_lower", "iqr_upper")] |>
+  write.csv("test-tables-2025/tes-state.csv")
+
+# # ICC
+# library(ICC)
+# 
+# ICCest(provider_state, med_rate, tes, CI.type = "THD")
+# ICCest(provider_state, log(med_rate), tes, CI.type = "THD")
+# 
+# # total
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84402), 
+#            CI.type = "THD")
+# # free
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84403), 
+#            CI.type = "THD")
+# 
+# # total
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84402 & payer_class == "Commercial"), 
+#            CI.type = "THD")
+# # free
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84403 & payer_class == "Commercial"), 
+#            CI.type = "THD")
+# 
+# # total
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84402 & payer_class == "Self-Pay"), 
+#            CI.type = "THD")
+# # free
+# ICCest(provider_state, log(med_rate), subset(tes, cpt == 84403 & payer_class == "Self-Pay"), 
+#            CI.type = "THD")
+
+```
+
+## Regression
+
+```{r, results="asis"}
+
+tes_lms = list()
+for (cp in c("84402: Total Testosterone", "84403: Free Testosterone")){
+  for (pc in c("Self-Pay", "Commercial")){
+    
+    m = lm(log(med_rate) ~ n_in_HSA + urban_rural + beds + scale(ADI) + owner, 
+           data = subset(tes, payer_class==pc & Procedure==cp))
+    tes_lms[[pc]][[cp]] = m
+    
+    tbl_regression(m, intercept=T) |> 
+      as_tibble() |>
+      kable( caption = paste0(cp, " ", pc), format = "markdown") |> 
+      print()
+    
+    # comdine with exponentiated
+    
+    x = cbind(coef(m), confint(m)) |> data.frame()
+    x = cbind(x, exp(x))
+    colnames(x) = c("Beta", "CI_lower", "CI_upper", 
+                    "exp(Beta)",  "exp(CI_lower)", "exp(CI_upper)")
+    
+    x[1, 4:6] = NA
+    
+    # tbl_regression(m, intercept=T) |> 
+    #   as_tibble() |> 
+    x |> round(3) |> 
+      write.csv(paste0("test-tables-2025/", gsub(": | ", "_",cp), "_", pc, ".csv"), na = "")
+  }
+}
+
+```
+
+```{r, include=F}
+miqr = function(x){
+  list(med = median(x), 
+       iqr_l = quantile(x, .25), 
+       iqr_u = quantile(x, .75),
+       min = min(x), max = max(x))
+}
+tes[, miqr(med_rate)]
+
+tes[, miqr(med_rate), by="payer_class"]
+tes[, miqr(med_rate), by="Procedure"]
+
+tes[, miqr(med_rate), by=c("payer_class", "Procedure")] |> 
+  write.csv("test-tables-2025/medians-iqrs.csv")
+```
+
