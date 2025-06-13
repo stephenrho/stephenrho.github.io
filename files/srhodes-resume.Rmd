@@ -12,6 +12,8 @@ linkcolor: blue
 docname:  Resume
 output: 
   vitae::hyndman
+header-includes:
+  - \pagenumbering{gobble}
 ---
 
 <!-- googlescholar: VXD5emcAAAAJ&hl -->
@@ -23,11 +25,10 @@ library(vitae); library(tibble)
 
 # Skills and Expertise
 
-- **R + R-Studio**: used for over 10 years; developed the pmcalibration and pminternal packages
-- **Python**: regularly used packages: numpy, pandas, scipy, psychopy, sklearn
-- **Other Programming Languages**: SLURM (for high performance computing); SQL (for databases); Stan (for Bayesian Modeling)
+- **R + R-Studio**: for analysis, report building, package and shiny app development; used for over 10 years
+- **Other Programming Languages**: SLURM (for high performance computing); SQL (for databases); Stan (for Bayesian modeling); python (for predictive modeling)
 - **Clinical Research**: clinical trial design; analysis of large healthcare databases; causal inference with observational data; Epic Cosmos superuser
-- **Communication**: both written and spoken to both technical and non-technical audiences
+- **Communication**: both written and spoken to both expert and lay audiences
 
 # Experience
 
@@ -38,7 +39,7 @@ exp = tribble(
   "Clinical Research Biostatistician III", "2022-present", "University Hospitals, Cleveland Medical Center", "Cleveland OH, USA", 
   c("Primary statistician on \\href{https://www.pcori.org/research-results/2024/bulking-versus-sling-treating-stress-urinary-incontinence-time-vaginal-prolapse-repair}{multi-center randomized trial funded by PCORI.}",
     "Extract information from large admininstrative/claims databases (Premier Healthcare Database, Marketscan, ICES (Ontario), Epic Cosmos).", 
-    "Develop and evaluate clinical prediction models. Wrote two R packages that implement best-practices for internal validation (pminternal) and assessing calibration (pmcalibration) of prediction models.",
+    "Develop and evaluate clinical prediction models. Wrote two R packages that implement best-practices for internal validation (\\href{https://cran.r-project.org/package=pminternal}{pminternal}) and assessing calibration (\\href{https://cran.r-project.org/package=pmcalibration}{pmcalibration}) of prediction models.",
     "Provide seminars on concepts and approaches in biostatistics to residents, fellows, and research staff."),
   # RRI
   "Postdoctoral Fellow", "2019-2021", "Baycrest Hospital, Rotman Research Institute (University of Toronto)", "Toronto ON, CA", 
