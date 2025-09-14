@@ -1,19 +1,18 @@
 ---
 name: Stephen Rhodes
 position: "Clinical Research Biostatistician III"
-address: "University Hospitals Cleveland Medical Center"
+address: "St Louis, MO"
 www: stephenrho.github.io
 email: "stephen.rhodes@uhhospitals.org"
 github: stephenrho
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 414141
-urlcolor: blue
-linkcolor: blue
 docname:  Resume
 output: 
   vitae::hyndman
 header-includes:
   - \pagenumbering{gobble}
+  - \hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue}
 ---
 
 <!-- googlescholar: VXD5emcAAAAJ&hl -->
@@ -26,9 +25,9 @@ library(vitae); library(tibble)
 # Skills and Expertise
 
 - **R + R-Studio**: for analysis, report building, package and shiny app development; used for over 10 years
-- **Other Programming Languages**: SLURM (for high performance computing); SQL (for databases); Stan (for Bayesian modeling); python (misc)
-- **Clinical Research**: clinical trial design; analysis of large healthcare databases; causal inference with observational data; Epic Cosmos superuser
-- **Communication**: both written and spoken to both expert and lay audiences
+- **Other Programming Languages**: SLURM (for high performance computing); SQL (for databases); JAGS, Stan (for Bayesian modeling); python (misc)
+- **Clinical Research**: experimental design, clinical trial design; analysis of large healthcare databases; causal inference with observational data; Epic Cosmos superuser
+- **Communication**: both written and spoken to both expert and lay audiences; regularly give seminars/workshops on statistical methods
 
 # Experience
 
@@ -43,7 +42,7 @@ exp = tribble(
     "Provide seminars on concepts and approaches in biostatistics to residents, fellows, and research staff."),
   # RRI
   "Postdoctoral Fellow", "2019-2021", "Baycrest Hospital, Rotman Research Institute (University of Toronto)", "Toronto ON, CA", 
-  c("Devised and conducted experiments on age-related changes to short- and long-term memory.",
+  c("Designed and conducted experiments on age-related changes to short- and long-term memory.",
     # "Developed a project using functional magnetic resonance imaging to decode currently active neural representations in short-term memory (shelved due to Covid-19).",
     "Used neural network image classification models to measure image similarity for testing against human perception and memory.",
     "Developed and led a workshop on Bayesian data analysis \\href{https://github.com/stephenrho/bayes-workshop}{(materials here)}."),
