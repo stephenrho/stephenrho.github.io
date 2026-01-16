@@ -77,8 +77,11 @@ conference = c("M3NEmzRMIkIC", "OU6Ihb5iCvQC", 'SP6oXDckpogC',
                "tOudhMTPpwUC", "0KyAp5RtaNEC", "yB1At4FlUx8C", 
                "9Nmd_mFXekcC", "XD-gHx7UXLsC", "t7zJ5fGR-2UC", 
                "z_wVstp3MssC", "VLnqNzywnoUC", 
+               "SpbeaW3--B0C", "e_rmSamDkqQC",
+               'kz9GbA2Ns4gC', 'k8Z6L05lTy4C',
+               "MLfJN-KU85MC",
                allpubs$pubid[grep("^IP|^MP|^PD|^\\(", allpubs$title)]
-               )
+)
 # length(unique(conference))
 
 allpubs$journal = gsub("\\, S$", "", allpubs$journal)
@@ -125,7 +128,7 @@ conf = conf %>%
 
 rbind(pubs[, c("type", "year", "author", "title", "journal", "number")],
       conf[, c("type", "year", "author", "title", "journal", "number")]) |>
-  write.csv(file = "~/Desktop/rhodes_papers-abstracts.csv", row.names = F, na = "")
+  write.csv(file = "../p/rhodes_papers-abstracts.csv", row.names = F, na = "")
 
 ```
 
